@@ -1,9 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function ContactPage() {
   const [language, setLanguage] = useState("fr");
   const [showFormSuccess, setShowFormSuccess] = useState(false);
+
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem("dg_site_language");
+    if (savedLanguage === "fr" || savedLanguage === "en") {
+      setLanguage(savedLanguage);
+    }
+  }, []);
+
+  const changeLanguage = (lang) => {
+    setLanguage(lang);
+    localStorage.setItem("dg_site_language", lang);
+  };
 
   const content = {
     fr: {
@@ -114,7 +126,7 @@ export default function ContactPage() {
             <div className="flex overflow-hidden rounded-2xl border border-green-900 bg-white/5">
               <button
                 type="button"
-                onClick={() => setLanguage("fr")}
+                onClick={() => changeLanguage("fr")}
                 className={`px-4 py-2 text-sm font-semibold transition ${
                   language === "fr"
                     ? "bg-white text-black"
@@ -125,7 +137,7 @@ export default function ContactPage() {
               </button>
               <button
                 type="button"
-                onClick={() => setLanguage("en")}
+                onClick={() => changeLanguage("en")}
                 className={`px-4 py-2 text-sm font-semibold transition ${
                   language === "en"
                     ? "bg-white text-black"
@@ -141,9 +153,7 @@ export default function ContactPage() {
         </div>
       </header>
 
-      <main
-        className="relative overflow-hidden border-t border-green-950 bg-black py-24 text-white"
-      >
+      <main className="relative overflow-hidden border-t border-green-950 bg-black py-24 text-white">
         <div className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-green-900/10 blur-3xl" />
 
         <div className="relative mx-auto max-w-6xl px-6">
