@@ -5,7 +5,6 @@ export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [language, setLanguage] = useState("fr");
   const [cookieConsent, setCookieConsent] = useState(null);
-  const [showFormSuccess, setShowFormSuccess] = useState(false);
 
   useEffect(() => {
     const savedConsent = localStorage.getItem("dg_cookie_consent");
@@ -26,7 +25,6 @@ export default function App() {
 
   const content = {
     fr: {
-      langLabel: "FR",
       meta: {
         headerSubtitle: "Formation • Coaching • Clinics",
       },
@@ -115,7 +113,6 @@ export default function App() {
         bookingText:
           "Disponible pour une introduction au disc golf, du perfectionnement technique ou une clinique sur mesure.",
         bookingButton: "Réserver maintenant",
-        contactButton: "Voir les coordonnées",
         infoCards: {
           format: { title: "Format", text: "Individuel ou groupe" },
           duration: { title: "Durée", text: "Flexible" },
@@ -152,19 +149,9 @@ export default function App() {
         ],
         statsTitle: "Quelques repères",
         stats: [
-          {
-            value: "670+",
-            label: "parties jouées",
-          },
-          {
-            value: "Westside Team",
-            label: "Warrior",
-          },
-          {
-            label: "",
-            logo: "/udisc.png",
-            url: "https://udisc.com",
-          },
+          { value: "670+", label: "parties jouées" },
+          { value: "Westside Team", label: "Warrior" },
+          { label: "", logo: "/udisc.png", url: "https://udisc.com" },
           {
             value: "266419",
             label: "Membre PDGA",
@@ -212,55 +199,20 @@ export default function App() {
         ],
         button: "Réserver",
       },
-      contactSection: {
+      contactPreview: {
         title: "Réserver une formation",
-        text: "Remplis le formulaire pour planifier une séance, poser une question ou réserver une clinique adaptée à ton niveau.",
-        mailLabel: "Courriel",
-        mailText:
-          "Idéal pour réserver une séance, une clinique de groupe ou demander plus d’informations.",
-        mailAction: "Écrire un courriel",
-        igLabel: "Instagram",
-        igText:
-          "Viens voir mon contenu, mes projets disc golf et contacte-moi aussi directement par message privé.",
-        igAction: "Ouvrir le profil",
-        footerText:
-          "Réponse pour cours privés, clinics de groupe, introduction au disc golf et événements spéciaux.",
-        formTitle: "Formulaire de réservation",
-        name: "Nom complet",
-        email: "Courriel",
-        level: "Niveau",
-        levelOptions: {
-          beginner: "Débutant",
-          intermediate: "Intermédiaire",
-          advanced: "Avancé",
-        },
-        sessionType: "Type de séance",
-        sessionOptions: {
-          private: "Cours privé",
-          group: "Clinic de groupe",
-          technical: "Analyse technique",
-          intro: "Introduction au disc golf",
-        },
-        players: "Nombre de joueurs",
-        date: "Date souhaitée",
-        location: "Lieu ou région",
-        message: "Informations supplémentaires",
-        submit: "Envoyer la demande",
-        successMessage:
-          "Merci. Votre demande a bien été envoyée.",
+        text: "Prêt à planifier une séance, poser une question ou réserver une clinique adaptée à ton niveau ? Accède à la page contact pour remplir le formulaire complet.",
+        button: "Accéder au formulaire",
       },
       cookiePopup: {
         title: "Utilisation des cookies",
-        text: "Ce site utilise des cookies essentiels pour assurer son bon fonctionnement et mémoriser certaines préférences. Vous pouvez accepter ou refuser les cookies non essentiels, lorsqu’ils s’appliquent. Consultez notre politique de confidentialité pour en savoir plus.",
+        text: "Ce site utilise des cookies essentiels pour assurer son bon fonctionnement et mémoriser certaines préférences. Consultez notre politique de confidentialité pour en savoir plus.",
         accept: "Accepter",
         decline: "Refuser",
       },
-      formSubject: "Nouvelle demande via le site DG_discgolf",
-      formspreeEndpoint: "https://formspree.io/f/xnjgoepz",
     },
 
     en: {
-      langLabel: "EN",
       meta: {
         headerSubtitle: "Training • Coaching • Clinics",
       },
@@ -349,7 +301,6 @@ export default function App() {
         bookingText:
           "Available for disc golf introductions, technical improvement or custom clinics.",
         bookingButton: "Book now",
-        contactButton: "View contact details",
         infoCards: {
           format: { title: "Format", text: "Individual or group" },
           duration: { title: "Duration", text: "Flexible" },
@@ -386,19 +337,9 @@ export default function App() {
         ],
         statsTitle: "A few highlights",
         stats: [
-          {
-            value: "670+",
-            label: "rounds played",
-          },
-          {
-            value: "Westside Team",
-            label: "Warrior",
-          },
-          {
-            label: "",
-            logo: "/udisc.png",
-            url: "https://udisc.com",
-          },
+          { value: "670+", label: "rounds played" },
+          { value: "Westside Team", label: "Warrior" },
+          { label: "", logo: "/udisc.png", url: "https://udisc.com" },
           {
             value: "266419",
             label: "PDGA Member",
@@ -446,68 +387,27 @@ export default function App() {
         ],
         button: "Book",
       },
-      contactSection: {
+      contactPreview: {
         title: "Book a session",
-        text: "Fill out the form to plan a session, ask a question or book a clinic adapted to your level.",
-        mailLabel: "Email",
-        mailText:
-          "Ideal for booking a session, a group clinic or asking for more information.",
-        mailAction: "Write an email",
-        igLabel: "Instagram",
-        igText:
-          "Come see my content, my disc golf projects and feel free to contact me directly by private message.",
-        igAction: "Open profile",
-        footerText:
-          "Available for private lessons, group clinics, disc golf introduction and special events.",
-        formTitle: "Booking form",
-        name: "Full name",
-        email: "Email",
-        level: "Level",
-        levelOptions: {
-          beginner: "Beginner",
-          intermediate: "Intermediate",
-          advanced: "Advanced",
-        },
-        sessionType: "Session type",
-        sessionOptions: {
-          private: "Private lesson",
-          group: "Group clinic",
-          technical: "Technical analysis",
-          intro: "Disc golf introduction",
-        },
-        players: "Number of players",
-        date: "Preferred date",
-        location: "Location or region",
-        message: "Additional information",
-        submit: "Send request",
-        successMessage: "Thank you. Your request has been sent successfully.",
+        text: "Ready to plan a session, ask a question or book a clinic adapted to your level? Visit the contact page to fill out the complete form.",
+        button: "Open contact form",
       },
       cookiePopup: {
         title: "Cookie usage",
-        text: "This website uses essential cookies to ensure proper functionality and remember certain preferences. You may accept or decline non-essential cookies, where applicable. See our privacy policy to learn more.",
+        text: "This website uses essential cookies to ensure proper functionality and remember certain preferences. See our privacy policy to learn more.",
         accept: "Accept",
         decline: "Decline",
       },
-      formSubject: "New request from the DG_discgolf website",
-      formspreeEndpoint: "https://formspree.io/f/xnjgoepz",
     },
   };
 
   const t = content[language];
-  const formspreeEndpoint = t.formspreeEndpoint;
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
   const changeLanguage = (lang) => {
     setLanguage(lang);
     setMobileMenuOpen(false);
-  };
-
-  const handleFormSubmit = () => {
-    setShowFormSuccess(true);
-    setTimeout(() => {
-      setShowFormSuccess(false);
-    }, 5000);
   };
 
   return (
@@ -523,7 +423,6 @@ export default function App() {
                 className="h-7 w-7 object-contain"
               />
             </div>
-
             <div className="text-sm text-gray-300">{t.meta.headerSubtitle}</div>
           </div>
 
@@ -541,9 +440,9 @@ export default function App() {
               <a href="#forfaits" className="transition hover:text-green-400">
                 {t.nav.forfaits}
               </a>
-              <a href="#contact" className="transition hover:text-green-400">
+              <Link to="/contact" className="transition hover:text-green-400">
                 {t.nav.contact}
-              </a>
+              </Link>
               <Link to="/confidentialite" className="transition hover:text-green-400">
                 {t.nav.privacy}
               </Link>
@@ -658,13 +557,13 @@ export default function App() {
               >
                 {t.nav.forfaits}
               </a>
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 onClick={closeMobileMenu}
                 className="rounded-2xl border border-green-900 bg-white/5 px-4 py-3 transition hover:border-green-700 hover:bg-white/10"
               >
                 {t.nav.contact}
-              </a>
+              </Link>
               <Link
                 to="/confidentialite"
                 onClick={closeMobileMenu}
@@ -718,12 +617,12 @@ export default function App() {
                 <p className="mt-3 text-sm leading-7 text-gray-300">
                   {t.hero.bookingText}
                 </p>
-                <a
-                  href="#contact"
+                <Link
+                  to="/contact"
                   className="mt-5 inline-flex rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-green-100"
                 >
                   {t.hero.bookingButton}
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -840,7 +739,6 @@ export default function App() {
                             alt={partner.name}
                             className="max-h-10 w-auto object-contain"
                           />
-
                           <div className="mt-2 text-center text-xs text-gray-300">
                             {partner.name}
                           </div>
@@ -966,12 +864,12 @@ export default function App() {
                   </p>
 
                   <div className="mt-6">
-                    <a
-                      href="#contact"
+                    <Link
+                      to="/contact"
                       className="inline-flex w-full items-center justify-center rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-green-100"
                     >
                       {t.cliniqueSection.bookingButton}
-                    </a>
+                    </Link>
                   </div>
 
                   <div className="mt-6 grid gap-3 sm:grid-cols-3">
@@ -1060,12 +958,12 @@ export default function App() {
                   </div>
                   <div className="mt-3 text-4xl font-bold text-white">{plan.price}</div>
                   <p className="mt-4 text-sm leading-7 text-gray-300">{plan.details}</p>
-                  <a
-                    href="#contact"
+                  <Link
+                    to="/contact"
                     className="mt-6 inline-flex rounded-2xl bg-green-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-green-600"
                   >
                     {t.plansSection.button}
-                  </a>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -1078,239 +976,30 @@ export default function App() {
         >
           <div className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-green-900/10 blur-3xl" />
 
-          <div className="relative mx-auto max-w-6xl px-6">
-            <div className="text-center">
-              <div className="mx-auto mb-6 flex w-fit items-center gap-3">
-                <div className="text-2xl font-bold">David Gagné</div>
-                <img
-                  src="/DG_logowhite.png"
-                  alt="DG Logo"
-                  className="h-7 w-7 object-contain opacity-90"
-                />
-              </div>
-
-              <h2 className="text-4xl font-bold md:text-5xl">
-                {t.contactSection.title}
-              </h2>
-              <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-gray-300">
-                {t.contactSection.text}
-              </p>
+          <div className="relative mx-auto max-w-5xl px-6 text-center">
+            <div className="mx-auto mb-6 flex w-fit items-center gap-3">
+              <div className="text-2xl font-bold">David Gagné</div>
+              <img
+                src="/DG_logowhite.png"
+                alt="DG Logo"
+                className="h-7 w-7 object-contain opacity-90"
+              />
             </div>
 
-            <div className="mt-12 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-              <div className="rounded-[2rem] border border-green-900 bg-white/5 p-8 shadow-xl shadow-black/30 ring-1 ring-green-950 backdrop-blur-sm">
-                <div className="mb-6 text-sm font-semibold uppercase tracking-[0.2em] text-green-400">
-                  {t.contactSection.formTitle}
-                </div>
+            <h2 className="text-4xl font-bold md:text-5xl">
+              {t.contactPreview.title}
+            </h2>
 
-                {showFormSuccess && (
-                  <div className="mb-6 rounded-2xl border border-green-700 bg-green-950/40 px-4 py-3 text-sm text-green-200">
-                    {t.contactSection.successMessage}
-                  </div>
-                )}
+            <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-gray-300">
+              {t.contactPreview.text}
+            </p>
 
-                <form
-                  action={formspreeEndpoint}
-                  method="POST"
-                  className="space-y-6"
-                  onSubmit={handleFormSubmit}
-                >
-                  <input type="hidden" name="_subject" value={t.formSubject} />
-
-                  <input
-                    type="hidden"
-                    name="_language"
-                    value={language.toUpperCase()}
-                  />
-
-                  <div className="grid gap-6 md:grid-cols-2">
-                    <div>
-                      <label className="mb-2 block text-sm font-medium text-gray-200">
-                        {t.contactSection.name}
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        required
-                        className="w-full rounded-2xl border border-green-900 bg-black/60 px-4 py-3 text-white outline-none transition placeholder:text-gray-500 focus:border-green-600"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="mb-2 block text-sm font-medium text-gray-200">
-                        {t.contactSection.email}
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        className="w-full rounded-2xl border border-green-900 bg-black/60 px-4 py-3 text-white outline-none transition placeholder:text-gray-500 focus:border-green-600"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid gap-6 md:grid-cols-2">
-                    <div>
-                      <label className="mb-2 block text-sm font-medium text-gray-200">
-                        {t.contactSection.level}
-                      </label>
-                      <select
-                        name="level"
-                        required
-                        defaultValue=""
-                        className="w-full rounded-2xl border border-green-900 bg-black/60 px-4 py-3 text-white outline-none transition focus:border-green-600"
-                      >
-                        <option value="" disabled>
-                          --
-                        </option>
-                        <option value={t.contactSection.levelOptions.beginner}>
-                          {t.contactSection.levelOptions.beginner}
-                        </option>
-                        <option value={t.contactSection.levelOptions.intermediate}>
-                          {t.contactSection.levelOptions.intermediate}
-                        </option>
-                        <option value={t.contactSection.levelOptions.advanced}>
-                          {t.contactSection.levelOptions.advanced}
-                        </option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="mb-2 block text-sm font-medium text-gray-200">
-                        {t.contactSection.sessionType}
-                      </label>
-                      <select
-                        name="sessionType"
-                        required
-                        defaultValue=""
-                        className="w-full rounded-2xl border border-green-900 bg-black/60 px-4 py-3 text-white outline-none transition focus:border-green-600"
-                      >
-                        <option value="" disabled>
-                          --
-                        </option>
-                        <option value={t.contactSection.sessionOptions.private}>
-                          {t.contactSection.sessionOptions.private}
-                        </option>
-                        <option value={t.contactSection.sessionOptions.group}>
-                          {t.contactSection.sessionOptions.group}
-                        </option>
-                        <option value={t.contactSection.sessionOptions.technical}>
-                          {t.contactSection.sessionOptions.technical}
-                        </option>
-                        <option value={t.contactSection.sessionOptions.intro}>
-                          {t.contactSection.sessionOptions.intro}
-                        </option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="grid gap-6 md:grid-cols-2">
-                    <div>
-                      <label className="mb-2 block text-sm font-medium text-gray-200">
-                        {t.contactSection.players}
-                      </label>
-                      <input
-                        type="number"
-                        name="players"
-                        min="1"
-                        className="w-full rounded-2xl border border-green-900 bg-black/60 px-4 py-3 text-white outline-none transition placeholder:text-gray-500 focus:border-green-600"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="mb-2 block text-sm font-medium text-gray-200">
-                        {t.contactSection.date}
-                      </label>
-                      <input
-                        type="date"
-                        name="preferredDate"
-                        className="w-full rounded-2xl border border-green-900 bg-black/60 px-4 py-3 text-white outline-none transition placeholder:text-gray-500 focus:border-green-600"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="mb-2 block text-sm font-medium text-gray-200">
-                      {t.contactSection.location}
-                    </label>
-                    <input
-                      type="text"
-                      name="location"
-                      className="w-full rounded-2xl border border-green-900 bg-black/60 px-4 py-3 text-white outline-none transition placeholder:text-gray-500 focus:border-green-600"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="mb-2 block text-sm font-medium text-gray-200">
-                      {t.contactSection.message}
-                    </label>
-                    <textarea
-                      name="message"
-                      rows="6"
-                      required
-                      className="w-full rounded-2xl border border-green-900 bg-black/60 px-4 py-3 text-white outline-none transition placeholder:text-gray-500 focus:border-green-600"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="inline-flex rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-green-100"
-                  >
-                    {t.contactSection.submit}
-                  </button>
-                </form>
-              </div>
-
-              <div className="space-y-6">
-                <a
-                  href="mailto:d.gagne@outlook.com"
-                  className="group block rounded-[2rem] border border-green-900 bg-white/5 p-8 text-left shadow-xl shadow-black/30 ring-1 ring-green-950 backdrop-blur-sm transition hover:border-green-700 hover:bg-white/[0.07]"
-                >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-green-950/60 text-sm font-bold tracking-[0.2em] text-green-300 ring-1 ring-green-800/70">
-                    MAIL
-                  </div>
-                  <div className="mt-6 text-sm font-semibold uppercase tracking-[0.2em] text-green-400">
-                    {t.contactSection.mailLabel}
-                  </div>
-                  <div className="mt-3 break-all text-2xl font-bold text-white">
-                    d.gagne@outlook.com
-                  </div>
-                  <p className="mt-3 text-sm leading-7 text-gray-300">
-                    {t.contactSection.mailText}
-                  </p>
-                  <div className="mt-6 inline-flex items-center text-sm font-semibold text-white transition group-hover:text-green-300">
-                    {t.contactSection.mailAction} <span className="ml-2">→</span>
-                  </div>
-                </a>
-
-                <a
-                  href="https://instagram.com/dg_discgolf"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group block rounded-[2rem] border border-green-900 bg-gradient-to-br from-green-950/40 to-black p-8 text-left shadow-xl shadow-black/30 ring-1 ring-green-950 transition hover:border-green-700 hover:from-green-900/40"
-                >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-black/60 text-sm font-bold tracking-[0.2em] text-green-300 ring-1 ring-green-800/70">
-                    IG
-                  </div>
-                  <div className="mt-6 text-sm font-semibold uppercase tracking-[0.2em] text-green-400">
-                    {t.contactSection.igLabel}
-                  </div>
-                  <div className="mt-3 text-2xl font-bold text-white">@dg_discgolf</div>
-                  <p className="mt-3 text-sm leading-7 text-gray-300">
-                    {t.contactSection.igText}
-                  </p>
-                  <div className="mt-6 inline-flex items-center text-sm font-semibold text-white transition group-hover:text-green-300">
-                    {t.contactSection.igAction} <span className="ml-2">↗</span>
-                  </div>
-                </a>
-
-                <div className="rounded-3xl border border-green-900 bg-white/5 p-6 text-center ring-1 ring-green-950">
-                  <p className="text-sm leading-7 text-gray-300">
-                    {t.contactSection.footerText}
-                  </p>
-                </div>
-              </div>
-            </div>
+            <Link
+              to="/contact"
+              className="mt-8 inline-flex rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-green-100"
+            >
+              {t.contactPreview.button}
+            </Link>
           </div>
         </section>
       </main>
@@ -1332,9 +1021,9 @@ export default function App() {
             <a href="#forfaits" className="transition hover:text-green-400">
               {t.nav.forfaits}
             </a>
-            <a href="#contact" className="transition hover:text-green-400">
+            <Link to="/contact" className="transition hover:text-green-400">
               {t.nav.contact}
-            </a>
+            </Link>
             <Link to="/confidentialite" className="transition hover:text-green-400">
               {t.nav.privacy}
             </Link>
