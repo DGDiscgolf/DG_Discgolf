@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function PrivacyPage() {
   const sections = [
     {
@@ -50,12 +52,12 @@ export default function PrivacyPage() {
     <div className="min-h-screen bg-black text-white">
       <header className="border-b border-green-950/80 bg-black/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <a
-            href="/"
+          <Link
+            to="/"
             className="text-sm font-semibold text-green-400 transition hover:text-green-300"
           >
             ← Retour au site
-          </a>
+          </Link>
 
           <div className="text-sm text-gray-400">DG Disc Golf</div>
         </div>
