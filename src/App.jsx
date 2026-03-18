@@ -11,6 +11,11 @@ export default function App() {
     if (savedConsent) {
       setCookieConsent(savedConsent);
     }
+
+    const savedLanguage = localStorage.getItem("dg_site_language");
+    if (savedLanguage === "fr" || savedLanguage === "en") {
+      setLanguage(savedLanguage);
+    }
   }, []);
 
   const acceptCookies = () => {
@@ -21,6 +26,14 @@ export default function App() {
   const declineCookies = () => {
     localStorage.setItem("dg_cookie_consent", "declined");
     setCookieConsent("declined");
+  };
+
+  const closeMobileMenu = () => setMobileMenuOpen(false);
+
+  const changeLanguage = (lang) => {
+    setLanguage(lang);
+    localStorage.setItem("dg_site_language", lang);
+    setMobileMenuOpen(false);
   };
 
   const content = {
@@ -402,13 +415,6 @@ export default function App() {
   };
 
   const t = content[language];
-
-  const closeMobileMenu = () => setMobileMenuOpen(false);
-
-  const changeLanguage = (lang) => {
-    setLanguage(lang);
-    setMobileMenuOpen(false);
-  };
 
   return (
     <div className="min-h-screen bg-black text-white">
