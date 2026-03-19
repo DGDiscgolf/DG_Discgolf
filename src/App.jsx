@@ -68,20 +68,7 @@ export default function App() {
       servicesSection: {
         title: "Services",
         text: "Des formations adaptées à votre objectif, que vous débutiez en disc golf ou que vous cherchiez à amener votre jeu à un autre niveau.",
-        items: [
-          {
-            title: "Cours privés",
-            text: "Séances personnalisées pour améliorer votre technique, votre constance et votre confiance sur le parcours.",
-          },
-          {
-            title: "Clinics de groupe",
-            text: "Ateliers dynamiques pour clubs, événements, entreprises ou groupes qui veulent découvrir et progresser ensemble.",
-          },
-          {
-            title: "Analyse technique",
-            text: "Travail ciblé sur le putting, le drive, l’approche, la lecture de ligne et la stratégie de jeu.",
-          },
-        ],
+        button: "Voir la page services",
       },
       cliniquePreview: {
         badge: "Clinique de disc golf",
@@ -188,20 +175,7 @@ export default function App() {
       servicesSection: {
         title: "Services",
         text: "Training tailored to your goals, whether you are new to disc golf or looking to take your game to the next level.",
-        items: [
-          {
-            title: "Private lessons",
-            text: "Personalized sessions to improve your technique, consistency and confidence on the course.",
-          },
-          {
-            title: "Group clinics",
-            text: "Dynamic workshops for clubs, events, companies or groups who want to discover and improve together.",
-          },
-          {
-            title: "Technical analysis",
-            text: "Focused work on putting, driving, approach shots, line reading and game strategy.",
-          },
-        ],
+        button: "View services page",
       },
       cliniquePreview: {
         badge: "Disc golf clinic",
@@ -301,9 +275,9 @@ export default function App() {
               <a href="#apropos" className="transition hover:text-green-400">
                 {t.nav.apropos}
               </a>
-              <a href="#services" className="transition hover:text-green-400">
+              <Link to="/services" className="transition hover:text-green-400">
                 {t.nav.services}
-              </a>
+              </Link>
               <Link to="/clinique" className="transition hover:text-green-400">
                 {t.nav.clinique}
               </Link>
@@ -409,13 +383,13 @@ export default function App() {
               >
                 {t.nav.apropos}
               </a>
-              <a
-                href="#services"
+              <Link
+                to="/services"
                 onClick={closeMobileMenu}
                 className="rounded-2xl border border-green-900 bg-white/5 px-4 py-3 transition hover:border-green-700 hover:bg-white/10"
               >
                 {t.nav.services}
-              </a>
+              </Link>
               <Link
                 to="/clinique"
                 onClick={closeMobileMenu}
@@ -633,27 +607,21 @@ export default function App() {
         </section>
 
         <section id="services" className="bg-black py-24">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="max-w-3xl">
-              <h2 className="text-4xl font-bold text-white md:text-5xl">
-                {t.servicesSection.title}
-              </h2>
-              <p className="mt-5 text-lg leading-8 text-gray-300">
-                {t.servicesSection.text}
-              </p>
-            </div>
+          <div className="mx-auto max-w-5xl px-6 text-center">
+            <h2 className="text-4xl font-bold text-white md:text-5xl">
+              {t.servicesSection.title}
+            </h2>
 
-            <div className="mt-12 grid gap-6 md:grid-cols-3">
-              {t.servicesSection.items.map((item) => (
-                <div
-                  key={item.title}
-                  className="rounded-3xl border border-green-900 bg-white/5 p-8 shadow-lg shadow-black/30 ring-1 ring-green-950 backdrop-blur-sm transition hover:-translate-y-1 hover:border-green-700"
-                >
-                  <h3 className="text-2xl font-semibold text-white">{item.title}</h3>
-                  <p className="mt-4 text-base leading-8 text-gray-300">{item.text}</p>
-                </div>
-              ))}
-            </div>
+            <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-gray-300">
+              {t.servicesSection.text}
+            </p>
+
+            <Link
+              to="/services"
+              className="mt-8 inline-flex rounded-2xl bg-green-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-green-600"
+            >
+              {t.servicesSection.button}
+            </Link>
           </div>
         </section>
 
@@ -764,9 +732,9 @@ export default function App() {
             <a href="#apropos" className="transition hover:text-green-400">
               {t.nav.apropos}
             </a>
-            <a href="#services" className="transition hover:text-green-400">
+            <Link to="/services" className="transition hover:text-green-400">
               {t.nav.services}
-            </a>
+            </Link>
             <Link to="/clinique" className="transition hover:text-green-400">
               {t.nav.clinique}
             </Link>
