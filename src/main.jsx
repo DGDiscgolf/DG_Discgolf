@@ -6,7 +6,7 @@ import App from "./App";
 import ServicesPage from "./pages/ServicesPage";
 import CliniquePage from "./pages/CliniquePage";
 import FormationPage from "./pages/FormationPage";
-import ForfaitsPage from "./pages/PackagesPage";
+import ForfaitsPage from "./pages/ForfaitsPage";
 import ContactPage from "./pages/ContactPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import "./index.css";
