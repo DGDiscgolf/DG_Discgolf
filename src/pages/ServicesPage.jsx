@@ -5,16 +5,25 @@ export default function ServicesPage() {
   const [language, setLanguage] = useState("fr");
 
   useEffect(() => {
-    const savedLanguage = localStorage.getItem("dg_site_language");
-    if (savedLanguage === "fr" || savedLanguage === "en") {
-      setLanguage(savedLanguage);
+    try {
+      const savedLanguage = localStorage.getItem("dg_site_language");
+      if (savedLanguage === "fr" || savedLanguage === "en") {
+        setLanguage(savedLanguage);
+      }
+    } catch (error) {
+      console.error("Language load error:", error);
     }
+
     window.scrollTo(0, 0);
   }, []);
 
   const changeLanguage = (lang) => {
-    setLanguage(lang);
-    localStorage.setItem("dg_site_language", lang);
+    try {
+      setLanguage(lang);
+      localStorage.setItem("dg_site_language", lang);
+    } catch (error) {
+      console.error("Language save error:", error);
+    }
   };
 
   const content = {
@@ -102,7 +111,7 @@ export default function ServicesPage() {
     },
   };
 
-  const t = content[language];
+  const t = content[language] || content.fr;
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -159,9 +168,6 @@ export default function ServicesPage() {
       <main>
         <section className="relative isolate overflow-hidden bg-black">
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-green-950/55" />
-          <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-green-900/20 blur-3xl" />
-          <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-green-700/10 blur-3xl" />
-
           <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-green-400">
               {t.hero.badge}
@@ -183,7 +189,7 @@ export default function ServicesPage() {
               {t.services.map((service) => (
                 <div
                   key={service.title}
-                  className="rounded-3xl border border-green-900 bg-white/5 p-8 shadow-lg shadow-black/30 ring-1 ring-green-950 backdrop-blur-sm transition hover:-translate-y-1 hover:border-green-700"
+                  className="rounded-3xl border border-green-900 bg-white/5 p-8 shadow-lg shadow-black/30 ring-1 ring-green-950"
                 >
                   <h2 className="text-2xl font-semibold text-white">
                     {service.title}
