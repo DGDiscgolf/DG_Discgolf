@@ -95,14 +95,37 @@ export default function ContactPage() {
     <div className="min-h-screen bg-black text-white">
       <header className="border-b border-green-950/80 bg-black/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <Link to="/" className="text-sm font-semibold text-green-400 hover:text-green-300">
+          <Link
+            to="/"
+            className="text-sm font-semibold text-green-400 transition hover:text-green-300"
+          >
             {t.back}
           </Link>
 
           <div className="flex items-center gap-4">
             <div className="flex rounded-2xl border border-green-900 bg-white/5">
-              <button onClick={() => changeLanguage("fr")} className={`px-4 py-2 ${language === "fr" ? "bg-white text-black" : "text-white"}`}>FR</button>
-              <button onClick={() => changeLanguage("en")} className={`px-4 py-2 ${language === "en" ? "bg-white text-black" : "text-white"}`}>EN</button>
+              <button
+                type="button"
+                onClick={() => changeLanguage("fr")}
+                className={`px-4 py-2 text-sm font-semibold ${
+                  language === "fr"
+                    ? "bg-white text-black"
+                    : "text-white hover:bg-white/10"
+                }`}
+              >
+                FR
+              </button>
+              <button
+                type="button"
+                onClick={() => changeLanguage("en")}
+                className={`px-4 py-2 text-sm font-semibold ${
+                  language === "en"
+                    ? "bg-white text-black"
+                    : "text-white hover:bg-white/10"
+                }`}
+              >
+                EN
+              </button>
             </div>
 
             <div className="text-sm text-gray-400">{t.brand}</div>
@@ -112,13 +135,17 @@ export default function ContactPage() {
 
       <main className="py-24">
         <div className="mx-auto max-w-6xl px-6">
+          <h1 className="text-center text-4xl font-bold md:text-5xl">
+            {t.title}
+          </h1>
 
-          <h1 className="text-4xl font-bold text-center">{t.title}</h1>
-          <p className="text-center text-gray-300 mt-4">{t.text}</p>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-gray-300">
+            {t.text}
+          </p>
 
           <div className="mt-12">
             {showFormSuccess && (
-              <div className="mb-6 text-green-400 text-center">
+              <div className="mb-6 text-center text-green-400">
                 {t.successMessage}
               </div>
             )}
@@ -130,52 +157,151 @@ export default function ContactPage() {
               className="space-y-6"
             >
               <input type="hidden" name="_subject" value={t.formSubject} />
+              <input
+                type="hidden"
+                name="_language"
+                value={language.toUpperCase()}
+              />
 
-              {/* NOM + EMAIL */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <input name="name" required placeholder={t.name} className="p-3 rounded-xl bg-black border border-green-900" />
-                <input type="email" name="email" required placeholder={t.email} className="p-3 rounded-xl bg-black border border-green-900" />
+              <div className="grid gap-6 md:grid-cols-2">
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-gray-200">
+                    {t.name}
+                  </label>
+                  <input
+                    name="name"
+                    required
+                    placeholder={t.name}
+                    className="w-full rounded-xl border border-green-900 bg-black p-3 text-white outline-none transition focus:border-green-600"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-gray-200">
+                    {t.email}
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder={t.email}
+                    className="w-full rounded-xl border border-green-900 bg-black p-3 text-white outline-none transition focus:border-green-600"
+                  />
+                </div>
               </div>
 
-              {/* NIVEAU + TYPE */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <select name="level" required className="p-3 rounded-xl bg-black border border-green-900">
-                  <option value="">{t.level}</option>
-                  <option>{t.levelOptions.beginner}</option>
-                  <option>{t.levelOptions.intermediate}</option>
-                  <option>{t.levelOptions.advanced}</option>
-                </select>
+              <div className="grid gap-6 md:grid-cols-2">
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-gray-200">
+                    {t.level}
+                  </label>
+                  <select
+                    name="level"
+                    required
+                    defaultValue=""
+                    className="w-full rounded-xl border border-green-900 bg-black p-3 text-white outline-none transition focus:border-green-600"
+                  >
+                    <option value="" disabled>
+                      {t.level}
+                    </option>
+                    <option value={t.levelOptions.beginner}>
+                      {t.levelOptions.beginner}
+                    </option>
+                    <option value={t.levelOptions.intermediate}>
+                      {t.levelOptions.intermediate}
+                    </option>
+                    <option value={t.levelOptions.advanced}>
+                      {t.levelOptions.advanced}
+                    </option>
+                  </select>
+                </div>
 
-                <select name="sessionType" required className="p-3 rounded-xl bg-black border border-green-900">
-                  <option value="">{t.sessionType}</option>
-                  <option>{t.sessionOptions.private}</option>
-                  <option>{t.sessionOptions.group}</option>
-                  <option>{t.sessionOptions.technical}</option>
-                  <option>{t.sessionOptions.intro}</option>
-                </select>
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-gray-200">
+                    {t.sessionType}
+                  </label>
+                  <select
+                    name="sessionType"
+                    required
+                    defaultValue=""
+                    className="w-full rounded-xl border border-green-900 bg-black p-3 text-white outline-none transition focus:border-green-600"
+                  >
+                    <option value="" disabled>
+                      {t.sessionType}
+                    </option>
+                    <option value={t.sessionOptions.private}>
+                      {t.sessionOptions.private}
+                    </option>
+                    <option value={t.sessionOptions.group}>
+                      {t.sessionOptions.group}
+                    </option>
+                    <option value={t.sessionOptions.technical}>
+                      {t.sessionOptions.technical}
+                    </option>
+                    <option value={t.sessionOptions.intro}>
+                      {t.sessionOptions.intro}
+                    </option>
+                  </select>
+                </div>
               </div>
 
-              {/* JOUEURS + DATE */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <input type="number" name="players" min="1" placeholder={t.players} className="p-3 rounded-xl bg-black border border-green-900" />
-                <input type="date" name="preferredDate" className="p-3 rounded-xl bg-black border border-green-900" />
+              <div className="grid gap-6 md:grid-cols-2">
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-gray-200">
+                    {t.players}
+                  </label>
+                  <input
+                    type="number"
+                    name="players"
+                    min="1"
+                    placeholder={t.players}
+                    className="w-full rounded-xl border border-green-900 bg-black p-3 text-white outline-none transition focus:border-green-600"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-gray-200">
+                    {t.date}
+                  </label>
+                  <input
+                    type="date"
+                    name="preferredDate"
+                    className="w-full rounded-xl border border-green-900 bg-black p-3 text-white outline-none transition focus:border-green-600"
+                  />
+                </div>
               </div>
 
-              {/* LOCATION */}
-              <input name="location" placeholder={t.location} className="w-full p-3 rounded-xl bg-black border border-green-900" />
+              <div>
+                <label className="mb-2 block text-sm font-medium text-gray-200">
+                  {t.location}
+                </label>
+                <input
+                  name="location"
+                  placeholder={t.location}
+                  className="w-full rounded-xl border border-green-900 bg-black p-3 text-white outline-none transition focus:border-green-600"
+                />
+              </div>
 
-              {/* MESSAGE */}
-              <textarea name="message" rows="5" required placeholder={t.message} className="w-full p-3 rounded-xl bg-black border border-green-900" />
+              <div>
+                <label className="mb-2 block text-sm font-medium text-gray-200">
+                  {t.message}
+                </label>
+                <textarea
+                  name="message"
+                  rows="5"
+                  required
+                  placeholder={t.message}
+                  className="w-full rounded-xl border border-green-900 bg-black p-3 text-white outline-none transition focus:border-green-600"
+                />
+              </div>
 
-              {/* BOUTON */}
               <button
                 type="submit"
-                className="bg-green-700 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-semibold"
+                className="rounded-xl bg-green-700 px-6 py-3 font-semibold text-white transition hover:bg-green-600"
               >
                 {t.submit}
               </button>
             </form>
-
           </div>
         </div>
       </main>
