@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 export default function ContactPage() {
   const [language, setLanguage] = useState("fr");
@@ -14,15 +13,8 @@ export default function ContactPage() {
     }
   }, []);
 
-  const changeLanguage = (lang) => {
-    setLanguage(lang);
-    localStorage.setItem("dg_site_language", lang);
-  };
-
   const content = {
     fr: {
-      back: "← Retour au site",
-      brand: "DG Disc Golf",
       title: "Réserver une formation",
       text: "Remplis le formulaire pour planifier une séance, poser une question ou réserver une clinique adaptée à ton niveau.",
       formTitle: "Formulaire de réservation",
@@ -52,8 +44,6 @@ export default function ContactPage() {
     },
 
     en: {
-      back: "← Back to site",
-      brand: "DG Disc Golf",
       title: "Book a session",
       text: "Fill out the form to plan a session, ask a question or book a clinic adapted to your level.",
       formTitle: "Booking form",
@@ -83,7 +73,7 @@ export default function ContactPage() {
     },
   };
 
-  const t = content[language];
+  const t = content[language] || content.fr;
   const formspreeEndpoint = t.formspreeEndpoint;
 
   const handleFormSubmit = () => {
@@ -93,46 +83,6 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <header className="border-b border-green-950/80 bg-black/90 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <Link
-            to="/"
-            className="text-sm font-semibold text-green-400 transition hover:text-green-300"
-          >
-            {t.back}
-          </Link>
-
-          <div className="flex items-center gap-4">
-            <div className="flex rounded-2xl border border-green-900 bg-white/5">
-              <button
-                type="button"
-                onClick={() => changeLanguage("fr")}
-                className={`px-4 py-2 text-sm font-semibold ${
-                  language === "fr"
-                    ? "bg-white text-black"
-                    : "text-white hover:bg-white/10"
-                }`}
-              >
-                FR
-              </button>
-              <button
-                type="button"
-                onClick={() => changeLanguage("en")}
-                className={`px-4 py-2 text-sm font-semibold ${
-                  language === "en"
-                    ? "bg-white text-black"
-                    : "text-white hover:bg-white/10"
-                }`}
-              >
-                EN
-              </button>
-            </div>
-
-            <div className="text-sm text-gray-400">{t.brand}</div>
-          </div>
-        </div>
-      </header>
-
       <main className="py-24">
         <div className="mx-auto max-w-6xl px-6">
           <h1 className="text-center text-4xl font-bold md:text-5xl">
