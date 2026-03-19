@@ -193,24 +193,8 @@ export default function App() {
       },
       plansSection: {
         title: "Forfaits",
-        items: [
-          {
-            name: "Découverte",
-            price: "40 $",
-            details: "Séance individuelle de 60 minutes.",
-          },
-          {
-            name: "Progression",
-            price: "100 $",
-            details: "Bloc de 3 séances.",
-          },
-          {
-            name: "Clinic groupe",
-            price: "Sur demande",
-            details: "Clinics pour clubs ou événements.",
-          },
-        ],
-        button: "Réserver",
+        text: "Découvrez les différentes options disponibles pour les cours privés, blocs de progression et cliniques de groupe.",
+        button: "Voir les forfaits",
       },
       contactPreview: {
         title: "Réserver une formation",
@@ -381,24 +365,8 @@ export default function App() {
       },
       plansSection: {
         title: "Packages",
-        items: [
-          {
-            name: "Discovery",
-            price: "40$",
-            details: "One 60-minute individual session.",
-          },
-          {
-            name: "Progression",
-            price: "100$",
-            details: "Block of 3 sessions.",
-          },
-          {
-            name: "Group clinic",
-            price: "On request",
-            details: "Clinics for clubs or events.",
-          },
-        ],
-        button: "Book",
+        text: "Explore the available options for private lessons, progression packages, and group clinics.",
+        button: "View packages",
       },
       contactPreview: {
         title: "Book a session",
@@ -443,9 +411,9 @@ export default function App() {
               <a href="#clinique" className="transition hover:text-green-400">
                 {t.nav.clinique}
               </a>
-              <a href="#forfaits" className="transition hover:text-green-400">
+              <Link to="/forfaits" className="transition hover:text-green-400">
                 {t.nav.forfaits}
-              </a>
+              </Link>
               <Link to="/contact" className="transition hover:text-green-400">
                 {t.nav.contact}
               </Link>
@@ -556,13 +524,13 @@ export default function App() {
               >
                 {t.nav.clinique}
               </a>
-              <a
-                href="#forfaits"
+              <Link
+                to="/forfaits"
                 onClick={closeMobileMenu}
                 className="rounded-2xl border border-green-900 bg-white/5 px-4 py-3 transition hover:border-green-700 hover:bg-white/10"
               >
                 {t.nav.forfaits}
-              </a>
+              </Link>
               <Link
                 to="/contact"
                 onClick={closeMobileMenu}
@@ -946,33 +914,21 @@ export default function App() {
         </section>
 
         <section id="forfaits" className="bg-black py-24">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="max-w-3xl">
-              <h2 className="text-4xl font-bold text-white md:text-5xl">
-                {t.plansSection.title}
-              </h2>
-            </div>
+          <div className="mx-auto max-w-5xl px-6 text-center">
+            <h2 className="text-4xl font-bold text-white md:text-5xl">
+              {t.plansSection.title}
+            </h2>
 
-            <div className="mt-12 grid gap-6 md:grid-cols-3">
-              {t.plansSection.items.map((plan) => (
-                <div
-                  key={plan.name}
-                  className="rounded-3xl border border-green-900 bg-white/5 p-8 shadow-lg shadow-black/30 ring-1 ring-green-950 backdrop-blur-sm"
-                >
-                  <div className="text-sm uppercase tracking-[0.2em] text-gray-400">
-                    {plan.name}
-                  </div>
-                  <div className="mt-3 text-4xl font-bold text-white">{plan.price}</div>
-                  <p className="mt-4 text-sm leading-7 text-gray-300">{plan.details}</p>
-                  <Link
-                    to="/contact"
-                    className="mt-6 inline-flex rounded-2xl bg-green-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-green-600"
-                  >
-                    {t.plansSection.button}
-                  </Link>
-                </div>
-              ))}
-            </div>
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-gray-300">
+              {t.plansSection.text}
+            </p>
+
+            <Link
+              to="/forfaits"
+              className="mt-8 inline-flex rounded-2xl bg-green-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-green-600"
+            >
+              {t.plansSection.button}
+            </Link>
           </div>
         </section>
 
@@ -1024,9 +980,9 @@ export default function App() {
             <a href="#clinique" className="transition hover:text-green-400">
               {t.nav.clinique}
             </a>
-            <a href="#forfaits" className="transition hover:text-green-400">
+            <Link to="/forfaits" className="transition hover:text-green-400">
               {t.nav.forfaits}
-            </a>
+            </Link>
             <Link to="/contact" className="transition hover:text-green-400">
               {t.nav.contact}
             </Link>
