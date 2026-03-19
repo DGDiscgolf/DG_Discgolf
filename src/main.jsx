@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./Layout";
 import App from "./App";
 import ServicesPage from "./pages/ServicesPage";
 import CliniquePage from "./pages/CliniquePage";
@@ -14,13 +15,15 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/clinique" element={<CliniquePage />} />
-        <Route path="/formation" element={<FormationPage />} />
-        <Route path="/forfaits" element={<ForfaitsPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/confidentialite" element={<PrivacyPage />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<App />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/clinique" element={<CliniquePage />} />
+          <Route path="/formation" element={<FormationPage />} />
+          <Route path="/forfaits" element={<ForfaitsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/confidentialite" element={<PrivacyPage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
