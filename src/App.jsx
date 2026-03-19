@@ -499,7 +499,7 @@ export default function App() {
                 </p>
                 <Link
                   to="/contact"
-                  className="mt-5 inline-flex rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-green-100"
+                  className="mt-5 inline-flex rounded-2xl bg-green-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-green-600"
                 >
                   {t.hero.bookingButton}
                 </Link>
