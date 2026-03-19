@@ -1,25 +1,19 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 export default function PrivacyPage() {
   const [language, setLanguage] = useState("fr");
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     const savedLanguage = localStorage.getItem("dg_site_language");
     if (savedLanguage === "fr" || savedLanguage === "en") {
       setLanguage(savedLanguage);
     }
   }, []);
 
-  const changeLanguage = (lang) => {
-    setLanguage(lang);
-    localStorage.setItem("dg_site_language", lang);
-  };
-
   const content = {
     fr: {
-      back: "← Retour au site",
-      brand: "DG Disc Golf",
       title: "Politique de confidentialité",
       updated: "Dernière mise à jour : 18 mars 2026",
       intro:
@@ -73,8 +67,6 @@ export default function PrivacyPage() {
     },
 
     en: {
-      back: "← Back to site",
-      brand: "DG Disc Golf",
       title: "Privacy Policy",
       updated: "Last updated: March 18, 2026",
       intro:
@@ -128,50 +120,10 @@ export default function PrivacyPage() {
     },
   };
 
-  const t = content[language];
+  const t = content[language] || content.fr;
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <header className="border-b border-green-950/80 bg-black/90 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <Link
-            to="/"
-            className="text-sm font-semibold text-green-400 transition hover:text-green-300"
-          >
-            {t.back}
-          </Link>
-
-          <div className="flex items-center gap-4">
-            <div className="flex overflow-hidden rounded-2xl border border-green-900 bg-white/5">
-              <button
-                type="button"
-                onClick={() => changeLanguage("fr")}
-                className={`px-4 py-2 text-sm font-semibold transition ${
-                  language === "fr"
-                    ? "bg-white text-black"
-                    : "text-white hover:bg-white/10"
-                }`}
-              >
-                FR
-              </button>
-              <button
-                type="button"
-                onClick={() => changeLanguage("en")}
-                className={`px-4 py-2 text-sm font-semibold transition ${
-                  language === "en"
-                    ? "bg-white text-black"
-                    : "text-white hover:bg-white/10"
-                }`}
-              >
-                EN
-              </button>
-            </div>
-
-            <div className="text-sm text-gray-400">{t.brand}</div>
-          </div>
-        </div>
-      </header>
-
       <main>
         <section className="bg-gradient-to-b from-black to-green-950/20 py-24">
           <div className="mx-auto max-w-5xl px-6">
