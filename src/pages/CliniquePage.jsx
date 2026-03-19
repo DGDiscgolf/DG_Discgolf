@@ -5,6 +5,8 @@ export default function CliniquePage() {
   const [language, setLanguage] = useState("fr");
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     const savedLanguage = localStorage.getItem("dg_site_language");
     if (savedLanguage === "fr" || savedLanguage === "en") {
       setLanguage(savedLanguage);
@@ -258,7 +260,7 @@ export default function CliniquePage() {
                 <div className="mt-6">
                   <Link
                     to="/contact"
-                    className="inline-flex w-full items-center justify-center rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-green-100"
+                    className="inline-flex w-full items-center justify-center rounded-2xl bg-green-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-green-600"
                   >
                     {t.bookingButton}
                   </Link>
