@@ -5,6 +5,8 @@ export default function PackagesPage() {
   const [language, setLanguage] = useState("fr");
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     const savedLanguage = localStorage.getItem("dg_site_language");
     if (savedLanguage === "fr" || savedLanguage === "en") {
       setLanguage(savedLanguage);
@@ -27,12 +29,12 @@ export default function PackagesPage() {
       items: [
         {
           name: "Découverte",
-          price: "60 $",
+          price: "40 $",
           details: "Séance individuelle de 60 minutes.",
         },
         {
           name: "Progression",
-          price: "140 $",
+          price: "120 $",
           details: "Bloc de 3 séances.",
         },
         {
@@ -52,12 +54,12 @@ export default function PackagesPage() {
       items: [
         {
           name: "Discovery",
-          price: "$60",
-          details: "One 60-minute individual session.",
+          price: "40 $",
+         details: "One 60-minute individual session.",
         },
         {
           name: "Progression",
-          price: "$140",
+          price: "120 $",
           details: "Block of 3 sessions.",
         },
         {
