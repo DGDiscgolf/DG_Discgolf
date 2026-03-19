@@ -673,7 +673,7 @@ export default function App() {
 
             <Link
               to="/clinique"
-              className="mt-8 inline-flex rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-green-100"
+              className="mt-8 inline-flex rounded-2xl bg-green-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-green-600"
             >
               {t.cliniquePreview.button}
             </Link>
@@ -748,7 +748,7 @@ export default function App() {
 
             <Link
               to="/contact"
-              className="mt-8 inline-flex rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-green-100"
+              className="mt-8 inline-flex rounded-2xl bg-green-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-green-600"
             >
               {t.contactPreview.button}
             </Link>
