@@ -13,15 +13,8 @@ export default function CliniquePage() {
     }
   }, []);
 
-  const changeLanguage = (lang) => {
-    setLanguage(lang);
-    localStorage.setItem("dg_site_language", lang);
-  };
-
   const content = {
     fr: {
-      back: "← Retour au site",
-      brand: "DG Disc Golf",
       badge: "Clinique de disc golf",
       title: "Découvre un nouveau sport et passe au niveau supérieur",
       p1: "Tu veux découvrir un nouveau sport et t’amuser, ou améliorer ton jeu pour lancer plus loin, être plus précis et baisser ton score ?",
@@ -73,8 +66,6 @@ export default function CliniquePage() {
     },
 
     en: {
-      back: "← Back to site",
-      brand: "DG Disc Golf",
       badge: "Disc golf clinic",
       title: "Discover a new sport and take your game to the next level",
       p1: "Do you want to discover a new sport and have fun, or improve your game to throw farther, be more precise and lower your score?",
@@ -126,50 +117,10 @@ export default function CliniquePage() {
     },
   };
 
-  const t = content[language];
+  const t = content[language] || content.fr;
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <header className="border-b border-green-950/80 bg-black/90 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <Link
-            to="/"
-            className="text-sm font-semibold text-green-400 transition hover:text-green-300"
-          >
-            {t.back}
-          </Link>
-
-          <div className="flex items-center gap-4">
-            <div className="flex overflow-hidden rounded-2xl border border-green-900 bg-white/5">
-              <button
-                type="button"
-                onClick={() => changeLanguage("fr")}
-                className={`px-4 py-2 text-sm font-semibold transition ${
-                  language === "fr"
-                    ? "bg-white text-black"
-                    : "text-white hover:bg-white/10"
-                }`}
-              >
-                FR
-              </button>
-              <button
-                type="button"
-                onClick={() => changeLanguage("en")}
-                className={`px-4 py-2 text-sm font-semibold transition ${
-                  language === "en"
-                    ? "bg-white text-black"
-                    : "text-white hover:bg-white/10"
-                }`}
-              >
-                EN
-              </button>
-            </div>
-
-            <div className="text-sm text-gray-400">{t.brand}</div>
-          </div>
-        </div>
-      </header>
-
       <main className="relative overflow-hidden bg-gradient-to-b from-black via-black to-green-950/10 py-24">
         <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-green-900/10 blur-3xl" />
         <div className="absolute right-0 top-1/3 h-80 w-80 rounded-full bg-green-700/10 blur-3xl" />
