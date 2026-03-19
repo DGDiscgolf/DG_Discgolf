@@ -6,7 +6,7 @@ export default function ContactPage() {
   const [showFormSuccess, setShowFormSuccess] = useState(false);
 
   useEffect(() => {
-    window.scrollTo(0, 0); // ✅ scroll en haut
+    window.scrollTo(0, 0);
 
     const savedLanguage = localStorage.getItem("dg_site_language");
     if (savedLanguage === "fr" || savedLanguage === "en") {
@@ -47,16 +47,6 @@ export default function ContactPage() {
       message: "Informations supplémentaires",
       submit: "Envoyer la demande",
       successMessage: "Merci. Votre demande a bien été envoyée.",
-      mailLabel: "Courriel",
-      mailText:
-        "Idéal pour réserver une séance, une clinique de groupe ou demander plus d’informations.",
-      mailAction: "Écrire un courriel",
-      igLabel: "Instagram",
-      igText:
-        "Viens voir mon contenu, mes projets disc golf et contacte-moi aussi directement par message privé.",
-      igAction: "Ouvrir le profil",
-      footerText:
-        "Réponse pour cours privés, clinics de groupe, introduction au disc golf et événements spéciaux.",
       formSubject: "Nouvelle demande via le site DG_discgolf",
       formspreeEndpoint: "https://formspree.io/f/xnjgoepz",
     },
@@ -88,16 +78,6 @@ export default function ContactPage() {
       message: "Additional information",
       submit: "Send request",
       successMessage: "Thank you. Your request has been sent successfully.",
-      mailLabel: "Email",
-      mailText:
-        "Ideal for booking a session, a group clinic or asking for more information.",
-      mailAction: "Write an email",
-      igLabel: "Instagram",
-      igText:
-        "Come see my content, my disc golf projects and feel free to contact me directly by private message.",
-      igAction: "Open profile",
-      footerText:
-        "Available for private lessons, group clinics, disc golf introduction and special events.",
       formSubject: "New request from the DG_discgolf website",
       formspreeEndpoint: "https://formspree.io/f/xnjgoepz",
     },
@@ -108,46 +88,21 @@ export default function ContactPage() {
 
   const handleFormSubmit = () => {
     setShowFormSuccess(true);
-    setTimeout(() => {
-      setShowFormSuccess(false);
-    }, 5000);
+    setTimeout(() => setShowFormSuccess(false), 5000);
   };
 
   return (
     <div className="min-h-screen bg-black text-white">
       <header className="border-b border-green-950/80 bg-black/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <Link
-            to="/"
-            className="text-sm font-semibold text-green-400 transition hover:text-green-300"
-          >
+          <Link to="/" className="text-sm font-semibold text-green-400 hover:text-green-300">
             {t.back}
           </Link>
 
           <div className="flex items-center gap-4">
-            <div className="flex overflow-hidden rounded-2xl border border-green-900 bg-white/5">
-              <button
-                type="button"
-                onClick={() => changeLanguage("fr")}
-                className={`px-4 py-2 text-sm font-semibold ${
-                  language === "fr"
-                    ? "bg-white text-black"
-                    : "text-white hover:bg-white/10"
-                }`}
-              >
-                FR
-              </button>
-              <button
-                type="button"
-                onClick={() => changeLanguage("en")}
-                className={`px-4 py-2 text-sm font-semibold ${
-                  language === "en"
-                    ? "bg-white text-black"
-                    : "text-white hover:bg-white/10"
-                }`}
-              >
-                EN
-              </button>
+            <div className="flex rounded-2xl border border-green-900 bg-white/5">
+              <button onClick={() => changeLanguage("fr")} className={`px-4 py-2 ${language === "fr" ? "bg-white text-black" : "text-white"}`}>FR</button>
+              <button onClick={() => changeLanguage("en")} className={`px-4 py-2 ${language === "en" ? "bg-white text-black" : "text-white"}`}>EN</button>
             </div>
 
             <div className="text-sm text-gray-400">{t.brand}</div>
@@ -155,47 +110,72 @@ export default function ContactPage() {
         </div>
       </header>
 
-      <main className="relative overflow-hidden border-t border-green-950 bg-black py-24 text-white">
-        <div className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-green-900/10 blur-3xl" />
+      <main className="py-24">
+        <div className="mx-auto max-w-6xl px-6">
 
-        <div className="relative mx-auto max-w-6xl px-6">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold md:text-5xl">{t.title}</h1>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
-              {t.text}
-            </p>
-          </div>
+          <h1 className="text-4xl font-bold text-center">{t.title}</h1>
+          <p className="text-center text-gray-300 mt-4">{t.text}</p>
 
-          <div className="mt-12 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-            <div className="rounded-[2rem] border border-green-900 bg-white/5 p-8 shadow-xl ring-1 ring-green-950">
-              <div className="mb-6 text-sm font-semibold uppercase text-green-400">
-                {t.formTitle}
+          <div className="mt-12">
+            {showFormSuccess && (
+              <div className="mb-6 text-green-400 text-center">
+                {t.successMessage}
+              </div>
+            )}
+
+            <form
+              action={formspreeEndpoint}
+              method="POST"
+              onSubmit={handleFormSubmit}
+              className="space-y-6"
+            >
+              <input type="hidden" name="_subject" value={t.formSubject} />
+
+              {/* NOM + EMAIL */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <input name="name" required placeholder={t.name} className="p-3 rounded-xl bg-black border border-green-900" />
+                <input type="email" name="email" required placeholder={t.email} className="p-3 rounded-xl bg-black border border-green-900" />
               </div>
 
-              {showFormSuccess && (
-                <div className="mb-6 rounded-2xl border border-green-700 bg-green-950/40 px-4 py-3 text-sm text-green-200">
-                  {t.successMessage}
-                </div>
-              )}
+              {/* NIVEAU + TYPE */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <select name="level" required className="p-3 rounded-xl bg-black border border-green-900">
+                  <option value="">{t.level}</option>
+                  <option>{t.levelOptions.beginner}</option>
+                  <option>{t.levelOptions.intermediate}</option>
+                  <option>{t.levelOptions.advanced}</option>
+                </select>
 
-              <form
-                action={formspreeEndpoint}
-                method="POST"
-                className="space-y-6"
-                onSubmit={handleFormSubmit}
+                <select name="sessionType" required className="p-3 rounded-xl bg-black border border-green-900">
+                  <option value="">{t.sessionType}</option>
+                  <option>{t.sessionOptions.private}</option>
+                  <option>{t.sessionOptions.group}</option>
+                  <option>{t.sessionOptions.technical}</option>
+                  <option>{t.sessionOptions.intro}</option>
+                </select>
+              </div>
+
+              {/* JOUEURS + DATE */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <input type="number" name="players" min="1" placeholder={t.players} className="p-3 rounded-xl bg-black border border-green-900" />
+                <input type="date" name="preferredDate" className="p-3 rounded-xl bg-black border border-green-900" />
+              </div>
+
+              {/* LOCATION */}
+              <input name="location" placeholder={t.location} className="w-full p-3 rounded-xl bg-black border border-green-900" />
+
+              {/* MESSAGE */}
+              <textarea name="message" rows="5" required placeholder={t.message} className="w-full p-3 rounded-xl bg-black border border-green-900" />
+
+              {/* BOUTON */}
+              <button
+                type="submit"
+                className="bg-green-700 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-semibold"
               >
-                <input type="hidden" name="_subject" value={t.formSubject} />
+                {t.submit}
+              </button>
+            </form>
 
-                {/* tes champs restent EXACTEMENT comme avant */}
-
-                <button
-                  type="submit"
-                  className="inline-flex rounded-2xl bg-green-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-green-600"
-                >
-                  {t.submit}
-                </button>
-              </form>
-            </div>
           </div>
         </div>
       </main>
