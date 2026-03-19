@@ -196,12 +196,12 @@ export default function App() {
         items: [
           {
             name: "Découverte",
-            price: "60 $",
+            price: "40 $",
             details: "Séance individuelle de 60 minutes.",
           },
           {
             name: "Progression",
-            price: "140 $",
+            price: "100 $",
             details: "Bloc de 3 séances.",
           },
           {
@@ -384,12 +384,12 @@ export default function App() {
         items: [
           {
             name: "Discovery",
-            price: "$60",
+            price: "40$",
             details: "One 60-minute individual session.",
           },
           {
             name: "Progression",
-            price: "$140",
+            price: "100$",
             details: "Block of 3 sessions.",
           },
           {
