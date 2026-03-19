@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function PackagesPage() {
+export default function ForfaitsPage() {
   const [language, setLanguage] = useState("fr");
 
   useEffect(() => {
@@ -13,15 +13,8 @@ export default function PackagesPage() {
     }
   }, []);
 
-  const changeLanguage = (lang) => {
-    setLanguage(lang);
-    localStorage.setItem("dg_site_language", lang);
-  };
-
   const content = {
     fr: {
-      back: "← Retour au site",
-      brand: "DG Disc Golf",
       title: "Forfaits",
       intro:
         "Choisissez la formule qui correspond à votre objectif, que ce soit pour découvrir le disc golf, progresser techniquement ou réserver une clinique sur mesure.",
@@ -45,8 +38,6 @@ export default function PackagesPage() {
       ],
     },
     en: {
-      back: "← Back to site",
-      brand: "DG Disc Golf",
       title: "Packages",
       intro:
         "Choose the option that matches your goal, whether it is discovering disc golf, improving your technique, or booking a custom clinic.",
@@ -55,7 +46,7 @@ export default function PackagesPage() {
         {
           name: "Discovery",
           price: "40 $",
-         details: "One 60-minute individual session.",
+          details: "One 60-minute individual session.",
         },
         {
           name: "Progression",
@@ -71,50 +62,10 @@ export default function PackagesPage() {
     },
   };
 
-  const t = content[language];
+  const t = content[language] || content.fr;
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <header className="border-b border-green-950/80 bg-black/90 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <Link
-            to="/"
-            className="text-sm font-semibold text-green-400 transition hover:text-green-300"
-          >
-            {t.back}
-          </Link>
-
-          <div className="flex items-center gap-4">
-            <div className="flex overflow-hidden rounded-2xl border border-green-900 bg-white/5">
-              <button
-                type="button"
-                onClick={() => changeLanguage("fr")}
-                className={`px-4 py-2 text-sm font-semibold transition ${
-                  language === "fr"
-                    ? "bg-white text-black"
-                    : "text-white hover:bg-white/10"
-                }`}
-              >
-                FR
-              </button>
-              <button
-                type="button"
-                onClick={() => changeLanguage("en")}
-                className={`px-4 py-2 text-sm font-semibold transition ${
-                  language === "en"
-                    ? "bg-white text-black"
-                    : "text-white hover:bg-white/10"
-                }`}
-              >
-                EN
-              </button>
-            </div>
-
-            <div className="text-sm text-gray-400">{t.brand}</div>
-          </div>
-        </div>
-      </header>
-
       <main>
         <section className="bg-gradient-to-b from-black to-green-950/20 py-24">
           <div className="mx-auto max-w-6xl px-6">
