@@ -12,19 +12,8 @@ export default function ServicesPage() {
     window.scrollTo(0, 0);
   }, []);
 
-  const changeLanguage = (lang) => {
-    setLanguage(lang);
-    localStorage.setItem("dg_site_language", lang);
-  };
-
   const content = {
     fr: {
-      meta: {
-        headerSubtitle: "Formation • Coaching • Clinics",
-      },
-      nav: {
-        back: "← Retour au site",
-      },
       hero: {
         badge: "Services",
         title: "Des services pensés pour accélérer ta progression.",
@@ -61,12 +50,6 @@ export default function ServicesPage() {
     },
 
     en: {
-      meta: {
-        headerSubtitle: "Training • Coaching • Clinics",
-      },
-      nav: {
-        back: "← Back to site",
-      },
       hero: {
         badge: "Services",
         title: "Services designed to help you improve faster.",
@@ -107,115 +90,64 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* HEADER */}
-      <header className="sticky top-0 z-30 border-b border-green-950/80 bg-black/90 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <div>
-            <div className="flex items-center gap-3 text-2xl font-bold">
-              David Gagné
-              <img
-                src="/DG_logowhite.png"
-                alt="DG Logo"
-                className="h-7 w-7"
-              />
-            </div>
-            <div className="text-sm text-gray-300">
-              {t.meta.headerSubtitle}
-            </div>
-          </div>
+      <main>
+        <section className="py-24 px-6 max-w-7xl mx-auto">
+          <p className="mb-4 text-sm uppercase tracking-widest text-green-400">
+            {t.hero.badge}
+          </p>
 
-          <div className="flex items-center gap-4">
-            <div className="hidden sm:flex rounded-2xl border border-green-900 bg-white/5 overflow-hidden">
-              <button
-                onClick={() => changeLanguage("fr")}
-                className={`px-4 py-2 ${
-                  language === "fr"
-                    ? "bg-white text-black"
-                    : "text-white hover:bg-white/10"
-                }`}
-              >
-                FR
-              </button>
-              <button
-                onClick={() => changeLanguage("en")}
-                className={`px-4 py-2 ${
-                  language === "en"
-                    ? "bg-white text-black"
-                    : "text-white hover:bg-white/10"
-                }`}
-              >
-                EN
-              </button>
-            </div>
+          <h1 className="mb-6 text-5xl font-black md:text-7xl">
+            {t.hero.title}
+          </h1>
 
-            <Link
-              to="/"
-              className="rounded-2xl border border-green-900 bg-white/5 px-4 py-2 hover:bg-white/10"
+          <p className="max-w-2xl text-lg text-gray-300">
+            {t.hero.text}
+          </p>
+        </section>
+
+        <section className="mx-auto grid max-w-7xl gap-6 px-6 py-20 md:grid-cols-3">
+          {t.services.map((service) => (
+            <div
+              key={service.title}
+              className="rounded-3xl border border-green-900 bg-white/5 p-8 transition hover:border-green-700"
             >
-              {t.nav.back}
-            </Link>
-          </div>
-        </div>
-      </header>
-
-      {/* HERO */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <p className="text-green-400 uppercase text-sm tracking-widest mb-4">
-          {t.hero.badge}
-        </p>
-        <h1 className="text-5xl md:text-7xl font-black mb-6">
-          {t.hero.title}
-        </h1>
-        <p className="text-gray-300 max-w-2xl text-lg">
-          {t.hero.text}
-        </p>
-      </section>
-
-      {/* SERVICES */}
-      <section className="py-20 px-6 max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
-        {t.services.map((service) => (
-          <div
-            key={service.title}
-            className="border border-green-900 rounded-3xl p-8 bg-white/5 hover:border-green-700 transition"
-          >
-            <h2 className="text-2xl font-semibold">{service.title}</h2>
-            <p className="mt-4 text-gray-300">{service.text}</p>
-          </div>
-        ))}
-      </section>
-
-      {/* EXTRAS */}
-      <section className="py-20 px-6 max-w-5xl mx-auto">
-        <h3 className="text-green-400 uppercase tracking-widest text-sm mb-6">
-          {t.extras.title}
-        </h3>
-
-        <ul className="grid md:grid-cols-2 gap-4">
-          {t.extras.items.map((item) => (
-            <li
-              key={item}
-              className="bg-black/60 border border-green-900 rounded-xl p-4"
-            >
-              • {item}
-            </li>
+              <h2 className="text-2xl font-semibold">{service.title}</h2>
+              <p className="mt-4 text-gray-300">{service.text}</p>
+            </div>
           ))}
-        </ul>
-      </section>
+        </section>
 
-      {/* CTA */}
-      <section className="py-24 text-center px-6">
-        <h2 className="text-4xl font-bold">{t.cta.title}</h2>
-        <p className="text-gray-300 mt-4 max-w-xl mx-auto">
-          {t.cta.text}
-        </p>
+        <section className="mx-auto max-w-5xl px-6 py-20">
+          <h3 className="mb-6 text-sm uppercase tracking-widest text-green-400">
+            {t.extras.title}
+          </h3>
 
-        <Link
-          to="/contact"
-          className="mt-6 inline-block bg-green-700 px-6 py-3 rounded-2xl hover:bg-green-600"
-        >
-          {t.cta.button}
-        </Link>
-      </section>
+          <ul className="grid gap-4 md:grid-cols-2">
+            {t.extras.items.map((item) => (
+              <li
+                key={item}
+                className="rounded-xl border border-green-900 bg-black/60 p-4"
+              >
+                • {item}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="px-6 py-24 text-center">
+          <h2 className="text-4xl font-bold">{t.cta.title}</h2>
+          <p className="mx-auto mt-4 max-w-xl text-gray-300">
+            {t.cta.text}
+          </p>
+
+          <Link
+            to="/contact"
+            className="mt-6 inline-block rounded-2xl bg-green-700 px-6 py-3 hover:bg-green-600"
+          >
+            {t.cta.button}
+          </Link>
+        </section>
+      </main>
     </div>
   );
 }
