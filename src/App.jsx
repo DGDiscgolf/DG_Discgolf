@@ -91,7 +91,7 @@ export default function App() {
         partners: [
           {
             name: "Westside Discs",
-            logo: "/WSDwhite.png",
+            logo: "/WSDwhite2.png",
             url: "https://www.westsidediscs.com",
           },
           {
