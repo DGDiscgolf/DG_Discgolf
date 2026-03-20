@@ -96,7 +96,7 @@ export default function App() {
           },
           {
             name: "Panak Disc Golf",
-            logo: "/panakwhite.png",
+            logo: "/IMG_7961.webp",
             url: "https://panak.ca/",
           },
           {
@@ -187,17 +187,17 @@ export default function App() {
         partners: [
           {
             name: "Westside Discs",
-            logo: "/WSDwhite2.png",
+            logo: "/IMG_7961.png",
             url: "https://www.westsidediscs.com",
           },
           {
             name: "Panak Disc Golf",
-            logo: "/panakwhite.png",
+            logo: "/IMG_7961.webp",
             url: "https://panak.ca/",
           },
           {
             name: "SIGR",
-            logo: "/sigrwhite.png",
+            logo: "/IMG_7962.png",
             url: "https://sigr.cc",
           },
         ],
