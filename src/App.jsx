@@ -101,7 +101,7 @@ export default function App() {
           },
           {
             name: "SIGR",
-            logo: "/sigrwhite.png",
+            logo: "/IMG_7962.png",
             url: "https://sigr.cc",
           },
         ],
