@@ -77,7 +77,7 @@ export default function App() {
         ],
         statsTitle: "Quelques repères",
         stats: [
-          { value: "675+", label: "parties jouées" },
+          { value: "680+", label: "parties jouées" },
           { value: "Westside Team", label: "Warrior" },
           { label: "", logo: "/udisc.png", url: "https://udisc.com" },
           {
@@ -173,7 +173,7 @@ export default function App() {
         ],
         statsTitle: "A few highlights",
         stats: [
-          { value: "675+", label: "rounds played" },
+          { value: "680+", label: "rounds played" },
           { value: "Westside Team", label: "Warrior" },
           { label: "", logo: "/udisc.png", url: "https://udisc.com" },
           {
