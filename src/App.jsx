@@ -45,6 +45,12 @@ export default function App() {
           "Disponible pour cours privés, clinics de groupe et événements spéciaux.",
         bookingButton: "Voir les options de réservation",
       },
+      videoSection: {
+        badge: "Vidéo",
+        title: "Reportage TVA+ sur le disc golf",
+        text: "Découvre un reportage mettant en lumière le disc golf et son essor au Québec.",
+        button: "Voir sur TVA+",
+      },
       servicesSection: {
         title: "Services",
         text: "Des formations adaptées à votre objectif, que vous débutiez en disc golf ou que vous cherchiez à amener votre jeu à un autre niveau.",
@@ -140,6 +146,12 @@ export default function App() {
         bookingText:
           "Available for private lessons, group clinics and special events.",
         bookingButton: "View booking options",
+      },
+      videoSection: {
+        badge: "Video",
+        title: "TVA+ feature on disc golf",
+        text: "Watch a feature highlighting disc golf and its growing popularity in Quebec.",
+        button: "Watch on TVA+",
       },
       servicesSection: {
         title: "Services",
@@ -272,6 +284,48 @@ export default function App() {
                 >
                   {t.hero.bookingButton}
                 </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-black py-20">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="rounded-[2rem] border border-green-900 bg-gradient-to-br from-green-950/40 to-black p-6 shadow-2xl shadow-black/40 ring-1 ring-green-950 md:p-8">
+              <div className="mb-6">
+                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-green-400">
+                  {t.videoSection.badge}
+                </p>
+                <h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">
+                  {t.videoSection.title}
+                </h2>
+                <p className="mt-4 max-w-3xl text-lg leading-8 text-gray-300">
+                  {t.videoSection.text}
+                </p>
+              </div>
+
+              <div className="overflow-hidden rounded-3xl border border-green-900 bg-black ring-1 ring-green-900/70">
+                <div className="aspect-video w-full">
+                  <iframe
+                    src="https://www.tvaplus.ca/video/to-pfsq-frisbeegolf-web-transfer-1601183248"
+                    title="TVA+ Disc Golf"
+                    className="h-full w-full"
+                    loading="lazy"
+                    allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+
+              <div className="mt-5">
+                <a
+                  href="https://www.tvaplus.ca/video/to-pfsq-frisbeegolf-web-transfer-1601183248"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex rounded-2xl bg-green-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-green-600"
+                >
+                  {t.videoSection.button}
+                </a>
               </div>
             </div>
           </div>
