@@ -22,12 +22,12 @@ export default function ForfaitsPage() {
       items: [
         {
           name: "Découverte",
-          price: "40 $",
+          price: "Sur demande",
           details: "Séance individuelle de 60 minutes.",
         },
         {
           name: "Progression",
-          price: "120 $",
+          price: "Sur demande",
           details: "Bloc de 3 séances.",
         },
         {
@@ -45,12 +45,12 @@ export default function ForfaitsPage() {
       items: [
         {
           name: "Discovery",
-          price: "40 $",
+          price: "On request",
           details: "One 60-minute individual session.",
         },
         {
           name: "Progression",
-          price: "120 $",
+          price: "On request",
           details: "Block of 3 sessions.",
         },
         {
