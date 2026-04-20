@@ -247,16 +247,17 @@ export default function App() {
             </div>
 
             <div className="rounded-[2rem] border border-green-900 bg-white/5 p-8 shadow-2xl shadow-black/50 backdrop-blur-sm">
-              <div className="rounded-3xl bg-black p-7 text-white ring-1 ring-green-900/80">
-                <div className="text-sm uppercase tracking-wide text-green-400">
-                  {t.hero.objectiveLabel}
+              <div className="overflow-hidden rounded-3xl bg-black ring-1 ring-green-900/80">
+                <div className="aspect-video w-full">
+                  <iframe
+                    src="https://www.tvaplus.ca/video/to-pfsq-frisbeegolf-web-transfer-1601183248"
+                    title="TVA+ Disc Golf"
+                    className="h-full w-full"
+                    loading="lazy"
+                    allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                    allowFullScreen
+                  />
                 </div>
-                <div className="mt-3 text-3xl font-bold leading-tight">
-                  {t.hero.objectiveTitle}
-                </div>
-                <p className="mt-4 text-sm leading-7 text-gray-300">
-                  {t.hero.objectiveText}
-                </p>
               </div>
 
               <div className="mt-5 rounded-3xl bg-gradient-to-br from-green-950 to-black p-7 ring-1 ring-green-900/80">
@@ -289,21 +290,21 @@ export default function App() {
                   {t.aboutSection.p1}
                 </p>
 
-                <p className="mt-4 text-lg leading-8 text-gray-300">
-                  {t.aboutSection.p2}
-                </p>
-
-                <p className="mt-4 text-lg leading-8 text-gray-300">
-                  {t.aboutSection.p3}
-                </p>
-
-                <div className="mt-8 flex justify-start">
+                <div className="mt-8 flex justify-center">
                   <img
                     src="/DG.png"
                     alt={t.aboutSection.imageAlt}
                     className="w-full max-w-sm rounded-3xl border border-green-900 object-cover shadow-2xl shadow-black/50"
                   />
                 </div>
+
+                <p className="mt-8 text-lg leading-8 text-gray-300">
+                  {t.aboutSection.p2}
+                </p>
+
+                <p className="mt-4 text-lg leading-8 text-gray-300">
+                  {t.aboutSection.p3}
+                </p>
               </div>
 
               <div className="space-y-6">
@@ -560,4 +561,4 @@ export default function App() {
       )}
     </div>
   );
-- [ ] }
+}
