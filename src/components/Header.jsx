@@ -105,12 +105,6 @@ export default function Header() {
             <Link to="/contact" className="transition hover:text-green-400">
               {t.nav.contact}
             </Link>
-            <Link
-              to="/confidentialite"
-              className="transition hover:text-green-400"
-            >
-              {t.nav.privacy}
-            </Link>
           </nav>
 
           <div className="flex overflow-hidden rounded-2xl border border-green-900 bg-white/5">
@@ -246,13 +240,6 @@ export default function Header() {
               className="rounded-2xl border border-green-900 bg-white/5 px-4 py-3 transition hover:border-green-700 hover:bg-white/10"
             >
               {t.nav.contact}
-            </Link>
-            <Link
-              to="/confidentialite"
-              onClick={closeMobileMenu}
-              className="rounded-2xl border border-green-900 bg-white/5 px-4 py-3 transition hover:border-green-700 hover:bg-white/10"
-            >
-              {t.nav.privacy}
             </Link>
           </nav>
         </div>
