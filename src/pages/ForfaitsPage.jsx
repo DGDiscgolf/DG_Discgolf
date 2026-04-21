@@ -17,7 +17,7 @@ export default function ForfaitsPage() {
     fr: {
       title: "Forfaits",
       intro:
-        "Choisissez la formule qui correspond à votre objectif, que ce soit pour découvrir le disque golf, progresser techniquement ou réserver une clinique sur mesure.",
+        "Choisissez la formule qui correspond à votre objectif, que ce soit pour découvrir le disc golf, progresser techniquement ou réserver une clinique sur mesure.",
       button: "Réserver",
       items: [
         {
@@ -31,32 +31,35 @@ export default function ForfaitsPage() {
           details: "Bloc de 3 séances.",
         },
         {
-          name: "Clinic groupe",
+          name: "Clinique de groupe",
           price: "Sur demande",
-          details: "Clinics pour clubs ou événements.",
+          details:
+            "Clinique offerte aux groupes, entreprises, écoles ou dans le cadre d’événements spéciaux.",
         },
       ],
     },
+
     en: {
       title: "Packages",
       intro:
-        "Choose the option that matches your goal, whether it is discovering disc golf, improving your technique, or booking a custom clinic.",
+        "Choose the option that best fits your goal, whether it’s discovering disc golf, improving your technique, or booking a custom clinic.",
       button: "Book",
       items: [
         {
           name: "Discovery",
           price: "On request",
-          details: "One 60-minute individual session.",
+          details: "One 60-minute private session.",
         },
         {
           name: "Progression",
           price: "On request",
-          details: "Block of 3 sessions.",
+          details: "Package of 3 sessions.",
         },
         {
           name: "Group clinic",
           price: "On request",
-          details: "Clinics for clubs or events.",
+          details:
+            "Clinic designed for groups, companies, schools, or special events.",
         },
       ],
     },
