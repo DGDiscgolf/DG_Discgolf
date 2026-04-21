@@ -33,7 +33,7 @@ export default function App() {
         privacy: "Confidentialité",
       },
       hero: {
-        badge: "Formation de disc golf",
+        badge: "Formation de disque golf",
         title: "Progressez plus vite avec un coaching structuré, précis et motivant.",
         text: "Cours privés, cliniques de groupe et accompagnement sur le terrain pour aider les joueurs à améliorer leur lancer, leur putting et leur stratégie de jeu.",
         objectiveLabel: "Objectif",
@@ -44,29 +44,29 @@ export default function App() {
         bookingText:
           "Disponible pour cours privés, cliniques de groupe et événements spéciaux.",
         bookingButton: "Voir les options de réservation",
-        reportTitle: "Qu’est-ce que le disc golf ?",
+        reportTitle: "Qu’est-ce que le disque golf ?",
         reportButton: "Voir reportage",
       },
       servicesSection: {
         title: "Services",
-        text: "Des formations adaptées à votre objectif, que vous débutiez en disc golf ou que vous cherchiez à amener votre jeu à un autre niveau.",
+        text: "Des formations adaptées à votre objectif, que vous débutiez en disque golf ou que vous cherchiez à amener votre jeu à un autre niveau.",
         button: "Voir la page services",
       },
       cliniquePreview: {
-        badge: "Clinique de disc golf",
+        badge: "Clinique de disque golf",
         title: "Découvre un nouveau sport et passe au niveau supérieur",
         text: "Cliniques adaptées aux joueurs débutants et intermédiaires pour améliorer la technique, le contrôle, les approches, le putting et la lecture du parcours.",
         button: "Voir la page clinique",
       },
       formationPreview: {
         badge: "Formation",
-        title: "Introduction au disc golf",
+        title: "Introduction au disque golf",
         text: "Une formule structurée pour découvrir le sport, comprendre les bases essentielles et initier les joueurs, groupes, écoles ou entreprises.",
         button: "Voir la page formation",
       },
       aboutSection: {
         title: "À propos de moi",
-        p1: "Je m'appelle David Gagné et je suis un passionné de disc golf basé à Québec. Aujourd'hui, j'utilise mon expérience sur le terrain pour aider les joueurs à progresser avec une approche simple, motivante et concrète.",
+        p1: "Je m'appelle David Gagné et je suis un passionné de disque golf basé à Québec. Aujourd'hui, j'utilise mon expérience sur le terrain pour aider les joueurs à progresser avec une approche simple, motivante et concrète.",
         p2: "Avec plus de 700 parties jouées, je connais bien les réalités de la progression, autant sur le plan technique que mental. Mon objectif est d’aider les joueurs à développer leur lancer, leur putting, leur confiance et leur stratégie de jeu.",
         p3: "Je suis fier de faire partie du Westside Team 2026, d’être ambassadeur pour SIGR et de représenter Panak Disc Golf, des partenaires qui soutiennent ma progression et contribuent au développement du disc golf.",
         imageAlt: "David Gagné Disc Golf",
