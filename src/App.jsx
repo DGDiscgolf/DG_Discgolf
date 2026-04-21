@@ -33,14 +33,14 @@ export default function App() {
         privacy: "Confidentialité",
       },
       hero: {
-        badge: "Formation de disque golf",
+        badge: "FORMATION DE DISQUE GOLF",
         title: "Progressez plus vite avec un coaching structuré, précis et motivant.",
         text: "Cours privés, cliniques de groupe et accompagnement sur le terrain pour aider les joueurs à améliorer leur lancer, leur putting et leur stratégie de jeu.",
         objectiveLabel: "Objectif",
         objectiveTitle: "Mieux lancer. Mieux scorer. Plus de plaisir.",
         objectiveText:
           "Une approche claire pour développer les bases techniques, corriger les habitudes et bâtir une progression durable.",
-        bookingLabel: "Réservation rapide",
+        bookingLabel: "RÉSERVATION RAPIDE",
         bookingText:
           "Disponible pour cours privés, cliniques de groupe et événements spéciaux.",
         bookingButton: "Voir les options de réservation",
@@ -131,14 +131,14 @@ export default function App() {
         privacy: "Privacy",
       },
       hero: {
-        badge: "Disc golf coaching",
+        badge: "DISC GOLF COACHING",
         title: "Improve faster with structured, precise and motivating coaching.",
         text: "Private lessons, group clinics and on-course coaching to help players improve their throwing, putting and game strategy.",
         objectiveLabel: "Goal",
         objectiveTitle: "Throw better. Score better. More fun.",
         objectiveText:
           "A clear approach to build strong fundamentals, correct habits and create lasting progress.",
-        bookingLabel: "Quick booking",
+        bookingLabel: "QUICK BOOKING",
         bookingText:
           "Available for private lessons, group clinics and special events.",
         bookingButton: "View booking options",
@@ -231,58 +231,72 @@ export default function App() {
     <div className="min-h-screen bg-black text-white">
       <main>
         <section className="relative isolate overflow-hidden bg-black">
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-green-950/55" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-green-950/40" />
           <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-green-900/20 blur-3xl" />
-          <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-green-700/10 blur-3xl" />
+          <div className="absolute right-[-80px] top-[-40px] h-[28rem] w-[28rem] rounded-full bg-green-500/10 blur-3xl" />
+          <div className="absolute right-[10%] bottom-[-80px] h-72 w-72 rounded-full bg-green-700/10 blur-3xl" />
 
-          <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-2 md:items-center md:py-32">
-            <div>
-              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-green-400">
+          <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2 md:items-center md:px-8 md:py-28 lg:gap-16 lg:px-10">
+            <div className="max-w-2xl">
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-green-400 sm:text-sm">
                 {t.hero.badge}
               </p>
 
-              <h1 className="max-w-3xl text-5xl font-black leading-[0.95] tracking-tight text-white md:text-7xl">
+              <h1 className="max-w-3xl text-5xl font-black leading-[0.92] tracking-tight text-white sm:text-6xl lg:text-7xl xl:text-[5.25rem]">
                 {t.hero.title}
               </h1>
 
-              <p className="mt-7 max-w-2xl text-lg leading-8 text-gray-300 md:text-xl">
+              <p className="mt-8 max-w-xl text-base leading-8 text-gray-300 sm:text-lg md:text-xl">
                 {t.hero.text}
               </p>
             </div>
 
-            <div className="rounded-[2rem] border border-green-900 bg-white/5 p-8 shadow-2xl shadow-black/50 backdrop-blur-sm">
-              <a
-                href="https://www.tvaplus.ca/video/to-pfsq-frisbeegolf-web-transfer-1601183248"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block overflow-hidden rounded-3xl bg-black ring-1 ring-green-900/80 transition hover:ring-green-500"
-              >
-                <div className="flex aspect-video w-full items-center justify-center bg-gradient-to-br from-green-950 to-black p-6 text-center">
-                  <div>
-                    <h3 className="text-2xl font-bold text-white md:text-3xl">
-                      {t.hero.reportTitle}
-                    </h3>
-
-                    <span className="mt-6 inline-flex rounded-2xl bg-green-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-green-600">
-                      {t.hero.reportButton}
-                    </span>
-                  </div>
-                </div>
-              </a>
-
-              <div className="mt-5 rounded-3xl bg-gradient-to-br from-green-950 to-black p-7 ring-1 ring-green-900/80">
-                <div className="text-sm font-semibold uppercase tracking-[0.18em] text-green-400">
-                  {t.hero.bookingLabel}
-                </div>
-                <p className="mt-3 text-sm leading-7 text-gray-300">
-                  {t.hero.bookingText}
-                </p>
-                <Link
-                  to="/contact"
-                  className="mt-5 inline-flex rounded-2xl bg-green-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-green-600"
+            <div className="relative">
+              <div className="rounded-[2rem] border border-green-900/70 bg-[#07110b]/90 p-4 shadow-[0_0_80px_rgba(34,197,94,0.12)] ring-1 ring-white/5 backdrop-blur-sm sm:p-5">
+                <a
+                  href="https://www.tvaplus.ca/video/to-pfsq-frisbeegolf-web-transfer-1601183248"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative block overflow-hidden rounded-[1.75rem] border border-white/10"
                 >
-                  {t.hero.bookingButton}
-                </Link>
+                  <div className="relative aspect-[16/10] w-full">
+                    <img
+                      src="/att.ce3rBjKTpooWWhcWu58lS0RZ0bKAegLZsjJ2oBxht2Y.jpeg"
+                      alt={t.hero.reportTitle}
+                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    />
+
+                    <div className="absolute inset-0 bg-black/45" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/20" />
+
+                    <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
+                      <h3 className="max-w-md text-2xl font-bold text-white sm:text-3xl">
+                        {t.hero.reportTitle}
+                      </h3>
+
+                      <span className="mt-6 inline-flex rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-green-900/30 transition group-hover:bg-green-500">
+                        {t.hero.reportButton}
+                      </span>
+                    </div>
+                  </div>
+                </a>
+
+                <div className="mt-4 rounded-[1.75rem] border border-green-900/70 bg-gradient-to-br from-green-950 via-[#07110b] to-black p-6 shadow-lg shadow-black/30">
+                  <div className="text-xs font-semibold uppercase tracking-[0.35em] text-green-400 sm:text-sm">
+                    {t.hero.bookingLabel}
+                  </div>
+
+                  <p className="mt-4 text-sm leading-7 text-gray-300 sm:text-base">
+                    {t.hero.bookingText}
+                  </p>
+
+                  <Link
+                    to="/contact"
+                    className="mt-5 inline-flex rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-green-500"
+                  >
+                    {t.hero.bookingButton}
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
