@@ -29,7 +29,7 @@ export default function ContactPage() {
       sessionType: "Type de séance",
       sessionOptions: {
         private: "Cours privé",
-        group: "Clinic de groupe",
+        group: "Clinique de groupe",
         technical: "Analyse technique",
         intro: "Introduction au disc golf",
       },
