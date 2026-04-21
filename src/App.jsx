@@ -34,7 +34,7 @@ export default function App() {
       },
       hero: {
         badge: "FORMATION DE DISQUE GOLF",
-        title: "Progressez plus vite avec un coaching structuré, précis et motivant.",
+        title: "Progressez avec un coaching structuré, précis et motivant.",
         text: "Cours privés, cliniques de groupe et accompagnement sur le terrain pour aider les joueurs à améliorer leur lancer, leur putting et leur stratégie de jeu.",
         objectiveLabel: "Objectif",
         objectiveTitle: "Mieux lancer. Mieux scorer. Plus de plaisir.",
@@ -132,7 +132,7 @@ export default function App() {
       },
       hero: {
         badge: "DISC GOLF COACHING",
-        title: "Improve faster with structured, precise and motivating coaching.",
+        title: "Improve with structured, precise and motivating coaching.",
         text: "Private lessons, group clinics and on-course coaching to help players improve their throwing, putting and game strategy.",
         objectiveLabel: "Goal",
         objectiveTitle: "Throw better. Score better. More fun.",
