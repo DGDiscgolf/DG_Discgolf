@@ -42,7 +42,7 @@ export default function App() {
           "Une approche claire pour développer les bases techniques, corriger les habitudes et bâtir une progression durable.",
         bookingLabel: "Réservation rapide",
         bookingText:
-          "Disponible pour cours privés, clinics de groupe et événements spéciaux.",
+          "Disponible pour cours privés, cliniques de groupe et événements spéciaux.",
         bookingButton: "Voir les options de réservation",
         reportTitle: "Qu’est-ce que le disc golf ?",
         reportButton: "Voir reportage",
