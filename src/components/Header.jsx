@@ -25,7 +25,7 @@ export default function Header() {
   const content = {
     fr: {
       meta: {
-        headerSubtitle: "Formation • Coaching • Clinics",
+        headerSubtitle: "Formation • Coaching • Cliniques",
       },
       nav: {
         services: "Services",
