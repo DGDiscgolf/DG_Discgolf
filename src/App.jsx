@@ -35,7 +35,7 @@ export default function App() {
       hero: {
         badge: "Formation de disc golf",
         title: "Progressez plus vite avec un coaching structuré, précis et motivant.",
-        text: "Cours privés, clinics de groupe et accompagnement sur le terrain pour aider les joueurs à améliorer leur lancer, leur putting et leur stratégie de jeu.",
+        text: "Cours privés, cliniques de groupe et accompagnement sur le terrain pour aider les joueurs à améliorer leur lancer, leur putting et leur stratégie de jeu.",
         objectiveLabel: "Objectif",
         objectiveTitle: "Mieux lancer. Mieux scorer. Plus de plaisir.",
         objectiveText:
