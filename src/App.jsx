@@ -67,7 +67,7 @@ export default function App() {
       aboutSection: {
         title: "À propos de moi",
         p1: "Je m'appelle David Gagné et je suis un passionné de disc golf basé à Québec. Aujourd'hui, j'utilise mon expérience sur le terrain pour aider les joueurs à progresser avec une approche simple, motivante et concrète.",
-        p2: "Avec plus de 670 parties jouées, je connais bien les réalités de la progression, autant sur le plan technique que mental. Mon objectif est d’aider les joueurs à développer leur lancer, leur putting, leur confiance et leur stratégie de jeu.",
+        p2: "Avec plus de 700 parties jouées, je connais bien les réalités de la progression, autant sur le plan technique que mental. Mon objectif est d’aider les joueurs à développer leur lancer, leur putting, leur confiance et leur stratégie de jeu.",
         p3: "Je suis fier de faire partie du Westside Team 2026, d’être ambassadeur pour SIGR et de représenter Panak Disc Golf, des partenaires qui soutiennent ma progression et contribuent au développement du disc golf.",
         imageAlt: "David Gagné Disc Golf",
         approachTitle: "Approche",
@@ -79,7 +79,7 @@ export default function App() {
         ],
         statsTitle: "Quelques repères",
         stats: [
-          { value: "680+", label: "parties jouées" },
+          { value: "700+", label: "parties jouées" },
           { value: "Westside Team", label: "Warrior" },
           { label: "", logo: "/udisc.png", url: "https://udisc.com" },
           {
@@ -165,7 +165,7 @@ export default function App() {
       aboutSection: {
         title: "About me",
         p1: "My name is David Gagné and I am a disc golf enthusiast based in Quebec City. Today, I use my on-course experience to help players improve with a simple, motivating and practical approach.",
-        p2: "With more than 670 rounds played, I understand the reality of progress, both technically and mentally. My goal is to help players develop their throwing, putting, confidence and game strategy.",
+        p2: "With more than 700 rounds played, I understand the reality of progress, both technically and mentally. My goal is to help players develop their throwing, putting, confidence and game strategy.",
         p3: "I am proud to be part of the Westside Team 2026, to be a SIGR ambassador and to represent Panak Disc Golf, partners that support my progression and contribute to the growth of disc golf.",
         imageAlt: "David Gagné Disc Golf",
         approachTitle: "Approach",
@@ -177,7 +177,7 @@ export default function App() {
         ],
         statsTitle: "A few highlights",
         stats: [
-          { value: "680+", label: "rounds played" },
+          { value: "700+", label: "rounds played" },
           { value: "Westside Team", label: "Warrior" },
           { label: "", logo: "/udisc.png", url: "https://udisc.com" },
           {
