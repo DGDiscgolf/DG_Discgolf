@@ -17,7 +17,7 @@ export default function ForfaitsPage() {
     fr: {
       title: "Forfaits",
       intro:
-        "Choisissez la formule qui correspond à votre objectif, que ce soit pour découvrir le disc golf, progresser techniquement ou réserver une clinique sur mesure.",
+        "Choisissez la formule qui correspond à votre objectif, que ce soit pour découvrir le disque golf, progresser techniquement ou réserver une clinique sur mesure.",
       button: "Réserver",
       items: [
         {
