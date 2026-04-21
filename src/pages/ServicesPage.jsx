@@ -25,7 +25,7 @@ export default function ServicesPage() {
           text: "Séances personnalisées pour travailler ta technique, corriger certains mouvements et progresser plus rapidement.",
         },
         {
-          title: "Clinics de groupe",
+          title: "Cliniques de groupe",
           text: "Formule idéale pour clubs, entreprises ou groupes qui veulent apprendre et progresser ensemble.",
         },
         {
@@ -43,6 +43,7 @@ export default function ServicesPage() {
         ],
       },
       cta: {
+        badge: "Réservation rapide",
         title: "Prêt à réserver ?",
         text: "Accède à la page contact pour réserver une séance ou poser tes questions.",
         button: "Accéder au formulaire",
@@ -79,6 +80,7 @@ export default function ServicesPage() {
         ],
       },
       cta: {
+        badge: "Quick booking",
         title: "Ready to book?",
         text: "Go to the contact page to book a session or ask questions.",
         button: "Open contact form",
@@ -134,18 +136,33 @@ export default function ServicesPage() {
           </ul>
         </section>
 
-        <section className="px-6 py-24 text-center">
-          <h2 className="text-4xl font-bold">{t.cta.title}</h2>
-          <p className="mx-auto mt-4 max-w-xl text-gray-300">
-            {t.cta.text}
-          </p>
+        <section className="relative overflow-hidden border-t border-green-950 bg-black py-24 text-white">
+          <div className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-green-900/10 blur-3xl" />
 
-          <Link
-            to="/contact"
-            className="mt-6 inline-block rounded-2xl bg-green-700 px-6 py-3 hover:bg-green-600"
-          >
-            {t.cta.button}
-          </Link>
+          <div className="relative mx-auto max-w-5xl px-6">
+            <div className="mx-auto max-w-4xl rounded-[2rem] border border-green-900 bg-gradient-to-br from-green-950 to-black p-8 shadow-2xl shadow-black/40 ring-1 ring-green-900/80 md:p-12">
+              <div className="text-center">
+                <div className="text-sm font-semibold uppercase tracking-[0.2em] text-green-400">
+                  {t.cta.badge}
+                </div>
+
+                <h2 className="mt-4 text-4xl font-bold md:text-5xl">
+                  {t.cta.title}
+                </h2>
+
+                <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-gray-300">
+                  {t.cta.text}
+                </p>
+
+                <Link
+                  to="/contact"
+                  className="mt-8 inline-flex rounded-2xl bg-green-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-green-600"
+                >
+                  {t.cta.button}
+                </Link>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
     </div>
