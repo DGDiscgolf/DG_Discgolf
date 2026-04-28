@@ -1,32 +1,28 @@
+Voici ton code complet adapté avec ADGQ / IMG_8884.jpeg ajouté en FR + EN, et la grille passée en 2 colonnes mobile / 4 colonnes desktop :
+
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
 export default function App() {
   const [language, setLanguage] = useState("fr");
   const [cookieConsent, setCookieConsent] = useState(null);
-
   useEffect(() => {
     const savedConsent = localStorage.getItem("dg_cookie_consent");
     if (savedConsent) {
       setCookieConsent(savedConsent);
     }
-
     const savedLanguage = localStorage.getItem("dg_site_language");
     if (savedLanguage === "fr" || savedLanguage === "en") {
       setLanguage(savedLanguage);
     }
   }, []);
-
   const acceptCookies = () => {
     localStorage.setItem("dg_cookie_consent", "accepted");
     setCookieConsent("accepted");
   };
-
   const declineCookies = () => {
     localStorage.setItem("dg_cookie_consent", "declined");
     setCookieConsent("declined");
   };
-
   const content = {
     fr: {
       nav: {
@@ -106,6 +102,11 @@ export default function App() {
             logo: "/IMG_7962.png",
             url: "https://sigr.cc",
           },
+          {
+            name: "ADGQ",
+            logo: "/IMG_8884.jpeg",
+            url: "#",
+          },
         ],
       },
       plansSection: {
@@ -125,7 +126,6 @@ export default function App() {
         decline: "Refuser",
       },
     },
-
     en: {
       nav: {
         privacy: "Privacy",
@@ -204,6 +204,11 @@ export default function App() {
             logo: "/IMG_7962.png",
             url: "https://sigr.cc",
           },
+          {
+            name: "ADGQ",
+            logo: "/IMG_8884.jpeg",
+            url: "#",
+          },
         ],
       },
       plansSection: {
@@ -224,9 +229,7 @@ export default function App() {
       },
     },
   };
-
   const t = content[language] || content.fr;
-
   return (
     <div className="min-h-screen bg-black text-white">
       <main>
@@ -235,22 +238,18 @@ export default function App() {
           <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-green-900/20 blur-3xl" />
           <div className="absolute right-[-80px] top-[-40px] h-[28rem] w-[28rem] rounded-full bg-green-500/10 blur-3xl" />
           <div className="absolute right-[10%] bottom-[-80px] h-72 w-72 rounded-full bg-green-700/10 blur-3xl" />
-
           <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2 md:items-center md:px-8 md:py-28 lg:gap-16 lg:px-10">
             <div className="max-w-2xl">
               <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-green-400 sm:text-sm">
                 {t.hero.badge}
               </p>
-
               <h1 className="max-w-3xl text-5xl font-black leading-[0.92] tracking-tight text-white sm:text-6xl lg:text-7xl xl:text-[5.25rem]">
                 {t.hero.title}
               </h1>
-
               <p className="mt-8 max-w-xl text-base leading-8 text-gray-300 sm:text-lg md:text-xl">
                 {t.hero.text}
               </p>
             </div>
-
             <div className="relative">
               <div className="rounded-[2rem] border border-green-900/70 bg-[#07110b]/90 p-4 shadow-[0_0_80px_rgba(34,197,94,0.12)] ring-1 ring-white/5 backdrop-blur-sm sm:p-5">
                 <a
@@ -265,31 +264,25 @@ export default function App() {
                       alt={t.hero.reportTitle}
                       className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                     />
-
                     <div className="absolute inset-0 bg-black/45" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/20" />
-
                     <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
                       <h3 className="max-w-md text-2xl font-bold text-white sm:text-3xl">
                         {t.hero.reportTitle}
                       </h3>
-
                       <span className="mt-6 inline-flex rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-green-900/30 transition group-hover:bg-green-500">
                         {t.hero.reportButton}
                       </span>
                     </div>
                   </div>
                 </a>
-
                 <div className="mt-4 rounded-[1.75rem] border border-green-900/70 bg-gradient-to-br from-green-950 via-[#07110b] to-black p-6 shadow-lg shadow-black/30">
                   <div className="text-xs font-semibold uppercase tracking-[0.35em] text-green-400 sm:text-sm">
                     {t.hero.bookingLabel}
                   </div>
-
                   <p className="mt-4 text-sm leading-7 text-gray-300 sm:text-base">
                     {t.hero.bookingText}
                   </p>
-
                   <Link
                     to="/contact"
                     className="mt-5 inline-flex rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-green-500"
@@ -301,19 +294,19 @@ export default function App() {
             </div>
           </div>
         </section>
-
-        <section id="apropos" className="bg-gradient-to-b from-black to-green-950/20 py-24">
+        <section
+          id="apropos"
+          className="bg-gradient-to-b from-black to-green-950/20 py-24"
+        >
           <div className="mx-auto max-w-7xl px-6">
             <div className="grid gap-12 md:grid-cols-2 md:items-start">
               <div>
                 <h2 className="text-4xl font-bold text-white md:text-5xl">
                   {t.aboutSection.title}
                 </h2>
-
                 <p className="mt-6 text-lg leading-8 text-gray-300">
                   {t.aboutSection.p1}
                 </p>
-
                 <div className="mt-8 flex justify-center">
                   <img
                     src="/DG.png"
@@ -321,34 +314,28 @@ export default function App() {
                     className="w-full max-w-sm rounded-3xl border border-green-900 object-cover shadow-2xl shadow-black/50"
                   />
                 </div>
-
                 <p className="mt-8 text-lg leading-8 text-gray-300">
                   {t.aboutSection.p2}
                 </p>
-
                 <p className="mt-4 text-lg leading-8 text-gray-300">
                   {t.aboutSection.p3}
                 </p>
               </div>
-
               <div className="space-y-6">
                 <div className="rounded-3xl border border-green-900 bg-white/5 p-8 shadow-lg shadow-black/30 ring-1 ring-green-950 backdrop-blur-sm">
                   <div className="text-sm font-semibold uppercase tracking-[0.2em] text-green-400">
                     {t.aboutSection.approachTitle}
                   </div>
-
                   <ul className="mt-5 space-y-4 text-base text-gray-200">
                     {t.aboutSection.approachItems.map((item) => (
                       <li key={item}>• {item}</li>
                     ))}
                   </ul>
                 </div>
-
                 <div className="rounded-3xl border border-green-900 bg-gradient-to-br from-green-950 to-black p-8 shadow-lg shadow-black/30 ring-1 ring-green-950">
                   <div className="text-sm font-semibold uppercase tracking-[0.2em] text-green-400">
                     {t.aboutSection.statsTitle}
                   </div>
-
                   <div className="mt-5 grid grid-cols-2 gap-4">
                     {t.aboutSection.stats.map((stat, index) => {
                       const contentBlock = (
@@ -372,7 +359,6 @@ export default function App() {
                           )}
                         </>
                       );
-
                       return stat.url ? (
                         <a
                           key={`${stat.label}-${index}`}
@@ -393,13 +379,11 @@ export default function App() {
                       );
                     })}
                   </div>
-
                   <div className="mt-6">
                     <div className="text-sm font-semibold uppercase tracking-[0.2em] text-green-400">
                       {t.aboutSection.partnersTitle}
                     </div>
-
-                    <div className="mt-4 grid grid-cols-3 gap-4">
+                    <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4">
                       {t.aboutSection.partners.map((partner) => (
                         <a
                           key={partner.name}
@@ -425,17 +409,14 @@ export default function App() {
             </div>
           </div>
         </section>
-
         <section id="services" className="bg-black py-24">
           <div className="mx-auto max-w-5xl px-6 text-center">
             <h2 className="text-4xl font-bold text-white md:text-5xl">
               {t.servicesSection.title}
             </h2>
-
             <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-gray-300">
               {t.servicesSection.text}
             </p>
-
             <Link
               to="/services"
               className="mt-8 inline-flex rounded-2xl bg-green-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-green-600"
@@ -444,21 +425,17 @@ export default function App() {
             </Link>
           </div>
         </section>
-
         <section className="bg-black py-24">
           <div className="mx-auto max-w-5xl px-6 text-center">
             <div className="inline-flex items-center rounded-full border border-green-800/80 bg-green-950/30 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-green-400">
               {t.cliniquePreview.badge}
             </div>
-
             <h2 className="mt-6 text-4xl font-black leading-tight text-white md:text-6xl">
               {t.cliniquePreview.title}
             </h2>
-
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-300">
               {t.cliniquePreview.text}
             </p>
-
             <Link
               to="/clinique"
               className="mt-8 inline-flex rounded-2xl bg-green-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-green-600"
@@ -467,21 +444,17 @@ export default function App() {
             </Link>
           </div>
         </section>
-
         <section className="bg-gradient-to-b from-black to-green-950/10 py-24">
           <div className="mx-auto max-w-5xl px-6 text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-green-400">
               {t.formationPreview.badge}
             </p>
-
             <h2 className="mt-4 text-4xl font-bold text-white md:text-5xl">
               {t.formationPreview.title}
             </h2>
-
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-300">
               {t.formationPreview.text}
             </p>
-
             <Link
               to="/formation"
               className="mt-8 inline-flex rounded-2xl bg-green-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-green-600"
@@ -490,17 +463,14 @@ export default function App() {
             </Link>
           </div>
         </section>
-
         <section id="forfaits" className="bg-black py-24">
           <div className="mx-auto max-w-5xl px-6 text-center">
             <h2 className="text-4xl font-bold text-white md:text-5xl">
               {t.plansSection.title}
             </h2>
-
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-gray-300">
               {t.plansSection.text}
             </p>
-
             <Link
               to="/forfaits"
               className="mt-8 inline-flex rounded-2xl bg-green-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-green-600"
@@ -509,13 +479,11 @@ export default function App() {
             </Link>
           </div>
         </section>
-
         <section
           id="contact"
           className="relative overflow-hidden border-t border-green-950 bg-black py-24 text-white"
         >
           <div className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-green-900/10 blur-3xl" />
-
           <div className="relative mx-auto max-w-5xl px-6">
             <div className="mx-auto max-w-4xl rounded-[2rem] border border-green-900 bg-gradient-to-br from-green-950 to-black p-8 shadow-2xl shadow-black/40 ring-1 ring-green-900/80 md:p-12">
               <div className="mb-6 flex items-center justify-center gap-3">
@@ -526,20 +494,16 @@ export default function App() {
                   className="h-7 w-7 object-contain opacity-90"
                 />
               </div>
-
               <div className="text-center">
                 <div className="text-sm font-semibold uppercase tracking-[0.2em] text-green-400">
                   {t.hero.bookingLabel}
                 </div>
-
                 <h2 className="mt-4 text-4xl font-bold md:text-5xl">
                   {t.contactPreview.title}
                 </h2>
-
                 <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-gray-300">
                   {t.contactPreview.text}
                 </p>
-
                 <Link
                   to="/contact"
                   className="mt-8 inline-flex rounded-2xl bg-green-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-green-600"
@@ -551,7 +515,6 @@ export default function App() {
           </div>
         </section>
       </main>
-
       {cookieConsent === null && (
         <div className="fixed inset-x-0 bottom-0 z-50 px-4 pb-4">
           <div className="mx-auto max-w-4xl rounded-3xl border border-green-900 bg-black/95 p-6 shadow-2xl shadow-black/50 ring-1 ring-green-950 backdrop-blur">
@@ -570,7 +533,6 @@ export default function App() {
                   </Link>
                 </p>
               </div>
-
               <div className="flex flex-col gap-3 sm:flex-row">
                 <button
                   type="button"
