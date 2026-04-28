@@ -108,7 +108,7 @@ export default function App() {
           },
           {
             name: "ADGQ",
-            logo: "/IMG_8884.jpeg",
+            logo: "/734A0157-156E-4DF0-9592-BC5DAFA3186A.png",
             url: "#",
           },
         ],
@@ -211,7 +211,7 @@ export default function App() {
           },
           {
             name: "ADGQ",
-            logo: "/IMG_8884.jpeg",
+            logo: "/734A0157-156E-4DF0-9592-BC5DAFA3186A.png",
             url: "#",
           },
         ],
