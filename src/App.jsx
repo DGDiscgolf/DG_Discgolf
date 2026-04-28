@@ -107,9 +107,9 @@ export default function App() {
             url: "https://sigr.cc",
           },
           {
-            name: "ADGQ",
+            name: "ADGQ.org",
             logo: "/734A0157-156E-4DF0-9592-BC5DAFA3186A.png",
-            url: "#",
+            url: "https://adgq.org/",
           },
         ],
       },
@@ -210,9 +210,9 @@ export default function App() {
             url: "https://sigr.cc",
           },
           {
-            name: "ADGQ",
+            name: "ADGQ.org",
             logo: "/734A0157-156E-4DF0-9592-BC5DAFA3186A.png",
-            url: "#",
+            url: "https://adgq.org/",
           },
         ],
       },
