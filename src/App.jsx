@@ -329,7 +329,7 @@ export default function App() {
 
                 <div className="mt-8 flex justify-center">
                   <img
-                    src="/DG.png"
+                    src="/att.eyAPYPf5FXI3Yu_KArprlQggntCj-zQiAfmrlZOjE_g.jpeg"
                     alt={t.aboutSection.imageAlt}
                     className="w-full max-w-sm rounded-3xl border border-green-900 object-cover shadow-2xl shadow-black/50"
                   />
